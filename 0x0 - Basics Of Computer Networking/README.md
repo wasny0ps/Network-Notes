@@ -1,6 +1,5 @@
-# Contents
 
-## Computer Networking 101
+# Computer Networking 101
 
 **Open system**: 
 A system which is connected to the network and is ready for communication. 
