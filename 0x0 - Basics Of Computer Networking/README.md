@@ -43,8 +43,33 @@ Here is a simple newtork topology.
 
 **Straight Cabling**: A straight through cable is a type of **twisted pair cable** that is used in local area networks to connect a computer to a network **hub** such as a **router**.
 
+Use straight through Ethernet cable for the following cabling:
+- Switch to router
+* Switch to PC or server
++ Hub to PC or server
+
 <p align="center"><img width="500px" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x0%20-%20Basics%20Of%20Computer%20Networking/sources/straight-through-cable.png"></p>
 
 **Cross Cabling**: A crossover Ethernet cable is a type of **Ethernet cable** used to connect computing devices together directly. Unlike straight through cable, the RJ45 crossover cable uses two different wiring standards: one end uses the **T568A wiring standard**, and the other end uses the **T568B wiring standard**. The internal wiring of Ethernet crossover cables reverses the transmit and receive signals. It is most often used to connect two devices of the same type: e.g. two **computers or two switches to each other**.
 
+Use crossover cables for the following cabling:
+- Switch to switch
+* Switch to hub
++ Hub to hub
+- Router to router
+* PC to PC
+
 <p align="center"><img width="500px" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x0%20-%20Basics%20Of%20Computer%20Networking/sources/crossover-cable.png"></p>
+
+## Cable Types
+
+**Fiber Optic Cable**: Fiber optic cable, also know as optical fiber cable, is a **type of Ethernet cable** which consists of one or more optic fibers that are used to transmit data. It is an assembly similar to an **electrical cable** while it is used to carry light and the **fiber optic cable price is much higher than that of copper cable**. Designed to use light pulses, fiber optic cables **support long distance telecommunication and high-speed data transmission**. Normally, fiber optic cable can run at a speed of 10 Gbps, 40 Gbps and even 100 Gbps. Therefore, it is widely used in much of the world’s internet, cable television and telephone systems.
+
+**Coaxial Cable**: A coaxial cable is an electrical cable with a copper conductor and an insulator shielding around it and a braided metal mesh that prevents signal interference and cross talk. Coaxial cable is also known as **coax**.
+
+**The core copper conductor** is used for the transmission of signals and the insulator is used to provide insulation to the copper conductor and the insulator is surrounded by a braided metal conductor which helps to **prevent the interference of electrical signals and prevent cross talk**. **This entire setup is again covered with a protective plastic layer to provide extra safety to the cable**.
+
+**UTP Cable**: Short for **unshielded twisted pair**, a UTP cable is a cable used in computer networking that consists of two shielded wires twisted around each other. As the name would imply, these cables do not have insulation (shielding) between each of the paired wires. Consequently, **they do not block electromagnetic interference, resulting in a higher risk of packet loss or corruption**.
+
+
+**_by wasny0ps_**
