@@ -30,7 +30,7 @@ The primary responsibility of a switch is to examine the incoming traffic and de
 
 **Wireless Bridge**: A wireless bridge is a type of networking device that **enables an over-the-air connection between two different segments of a local area network (LAN)**. **Wireless bridges use radio signals in the microwave or laser spectrum to provide fixed wireless access**. A wireless bridge, which may also be referred to as a **Wi-Fi bridge**, works much like a wired network bridge. They play an important role in connecting LAN segments that are logically separated or located in different physical locations.
 
-Here is a basic newtork diagram.
+Here is a simple newtork topology.
 
 <p align="center"><img width="500px" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x0%20-%20Basics%20Of%20Computer%20Networking/sources/basic_network_topology.png"></p>
 
