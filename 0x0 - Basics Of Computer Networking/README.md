@@ -32,7 +32,7 @@ The primary responsibility of a switch is to examine the incoming traffic and de
 
 Here is a basic newtork diagram.
 
-<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x0%20-%20Basics%20Of%20Computer%20Networking/sources/network_iagram.png"></p>
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x0%20-%20Basics%20Of%20Computer%20Networking/sources/network_diagram.png"></p>
 
 
 ## Cabling In The Network
