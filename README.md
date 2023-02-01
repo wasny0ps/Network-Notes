@@ -1,2 +1,2 @@
 # Network-Notes
-Here is my network notes while I was taking notes in high school. 
+Here are my high school networking lecture notes. I will continue to add as I learn. 
