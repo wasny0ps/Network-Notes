@@ -41,8 +41,10 @@ Here is a simple newtork topology.
 
 **Network Devices**: Network devices are physical devices that allow hardware on a computer network to interact and communicate with one another. In layman's terms, we can describe network devices in computer networks as the devices that connect fax machines, computers, printers, and other electronic devices to the network.
 
-**Straight Cabling**: A straight through cable is a type of twisted pair cable that is used in local area networks to connect a computer to a network hub such as a router.
+**Straight Cabling**: A straight through cable is a type of **twisted pair cable** that is used in local area networks to connect a computer to a network **hub** such as a **router**.
 
 <p align="center"><img width="500px" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x0%20-%20Basics%20Of%20Computer%20Networking/sources/straight-through-cable.png"></p>
 
-**Cross Cabling**:
+**Cross Cabling**: A crossover Ethernet cable is a type of **Ethernet cable** used to connect computing devices together directly. Unlike straight through cable, the RJ45 crossover cable uses two different wiring standards: one end uses the **T568A wiring standard**, and the other end uses the **T568B wiring standard**. The internal wiring of Ethernet crossover cables reverses the transmit and receive signals. It is most often used to connect two devices of the same type: e.g. two **computers or two switches to each other**.
+
+<p align="center"><img width="500px" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x0%20-%20Basics%20Of%20Computer%20Networking/sources/crossover-cable.png"></p>
