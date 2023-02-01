@@ -40,3 +40,9 @@ Here is a simple newtork topology.
 **End point devices**: Endpoints are **physical devices** that connect to and exchange information with a computer network. Some examples of endpoints are **mobile devices**, **desktop computers**, **firewalls**, virtual machines, embedded devices, and servers.
 
 **Network Devices**: Network devices are physical devices that allow hardware on a computer network to interact and communicate with one another. In layman's terms, we can describe network devices in computer networks as the devices that connect fax machines, computers, printers, and other electronic devices to the network.
+
+**Straight Cabling**: A straight through cable is a type of twisted pair cable that is used in local area networks to connect a computer to a network hub such as a router.
+
+<p align="center"><img width="500px" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x0%20-%20Basics%20Of%20Computer%20Networking/sources/straight-through-cable.png"></p>
+
+**Cross Cabling**:
