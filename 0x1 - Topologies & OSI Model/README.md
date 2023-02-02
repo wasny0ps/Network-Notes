@@ -82,4 +82,13 @@ In a mesh topology, every device is connected to another device via a particular
 
 ## Tree Topology
 
-<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/tree_topology.png"></p>
+<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/tree-topology.png"></p>
+
+In computer networking, tree topology is a type of network topology that **resembles a tree**. In a tree topology, there is one central node (the **trunk**), and each node is connected to the central node through a single path. Nodes can be thought of as branches coming off of the trunk. Tree topologies are often used to create large networks.
+
+| Advantage | Problems |
+| :---:| :---:|
+|  Error detection and error correction are very easy.  |  If the central hub gets fails the entire system fails.  | 
+|We can add new devices to the existing network. |The cost is high because of the cabling.|
+|It allows the network to get isolated and also prioritize from different computers.
+| If new devices are added, it becomes difficult to reconfigure.|
