@@ -90,5 +90,4 @@ In computer networking, tree topology is a type of network topology that **resem
 | :---:| :---:|
 |  Error detection and error correction are very easy.  |  If the central hub gets fails the entire system fails.  | 
 |We can add new devices to the existing network. |The cost is high because of the cabling.|
-|It allows the network to get isolated and also prioritize from different computers.
-| If new devices are added, it becomes difficult to reconfigure.|
+|It allows the network to get isolated and also prioritize from different computers.| If new devices are added, it becomes difficult to reconfigure.|
