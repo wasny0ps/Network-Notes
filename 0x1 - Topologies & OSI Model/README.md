@@ -35,3 +35,13 @@ Types Of Physical Topologies:
 
 Bus topology, also known as line topology, is a type of network topology in which all devices in the network are connected by one central **RJ-45 network cable or coaxial cable**. The single cable, where all data is transmitted between devices, is referred to as the bus, backbone, or trunk. It is bi-directional. It is a multi-point connection and a non-robust topology because if the backbone fails the topology crashes. In Bus Topology, various MAC (Media Access Control) protocols are followed by LAN ethernet connections.
 
+
+| Advantage | Problems |
+| :---:| :---:|
+|  Adding a new device is easy.   |  Problem detection is difficult.   | 
+|A broken device does not affect other devices.|A broken main network effects other devices|
+
+
+## Ring Topology
+
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/ring_topology.png"></p>
