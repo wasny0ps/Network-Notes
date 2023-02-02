@@ -18,3 +18,17 @@ Here is a picture about types of computer networks:
 ## Physical Topologies
 
 Physical topology indicates arrangement of different elements of a network. It reflects physical layout of devices and cables to a form a connected network. It is concerned with essentials of network ignoring minute details like transfer of data and device type. The pattern of arrangement of nodes (computers) and network cables depends on ease of installation and setup of the network. It affects cost and bandwidth capacity based on solution of devices. It takes into account placement of nodes and distance between them.
+
+
+Types Of Physical Topologies:
+
+- Bus Topology
+* Ring Topology
++ Star Topology
+- Tree Topology
+* Mesh Topology
+
+
+## Bus Topology
+
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/bus_topology.png"></p>
