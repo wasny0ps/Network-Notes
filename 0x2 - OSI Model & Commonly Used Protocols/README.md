@@ -73,15 +73,15 @@ At the very top of the OSI Reference Model stack of layers, we find the Applicat
 # Common Used Protocols
 
 | Protocol | Function | Used Ports | Used Transport Protcol |
-|:---|:---:|:---:|:---:|
-|FTP - File Transfer Protocol| | 21 | TCP|
-|SSH - Secure Shell| | 22 | TCP|
-|TELNET - Telecommunication Network| | 23 | TCP|
-|SMTP - Simple Mail Transfer Network| | 25 | TCP/UDP|
-|DNS - Domain Name Server| | 53 | UDP|
-|DHCP - Dynamic Host Configration Protocol| | 67,68 | UDP|
-|TFTP - Trivial File Transfer Protocol| | 69 | TCP|
-|HTTP - Hype Text Transfer Protocol| | 80 | TCP|
-|HTTPS - Secure Hyper Text Transfer Protocol| | 443 | TCP|
-|POP3 - Post Office Protocol| | 110 | TCP|
-|SNMP - Simple Network Managment Protocol || 161,162 | TCP/UDP|
+|:---|:---|:---:|:---:|
+|FTP - File Transfer Protocol| It is a standard communication protocol used for the transfer of computer files from a server to a client on a computer network. | 21 | TCP|
+|SSH - Secure Shell|It is a cryptographic network protocol for operating network services securely over an unsecured network. It's most notable applications are remote login and command-line execution. | 22 | TCP|
+|TELNET - Telecommunication Network| It is a client/server application protocol that provides access with unsafe way to virtual terminals of remote systems on local area networks or the Internet. | 23 | TCP|
+|SMTP - Simple Mail Transfer Network|It is an Internet standard communication protocol for electronic mail transmission. Mail servers and other message transfer agents use SMTP to send and receive mail messages. | 25 | TCP|
+|DNS - Domain Name Server|It is a hierarchical and distributed naming system for computers, services, and other resources in the IP networks. It associates various information with domain names assigned to each of the associated entities. | 53 | TCP/UDP|
+|DHCP - Dynamic Host Configration Protocol|It is a network management protocol used on IP networks for automatically assigning IP addresses and other communication parameters to devices connected to the network using a client–server architecture. | 67,68 | UDP|
+|TFTP - Trivial File Transfer Protocol| It is a simple lockstep File Transfer Protocol which allows a client to get a file from or put a file onto a remote host. One of its primary uses is in the early stages of nodes booting from a local area network. | 69 | UDP|
+|HTTP - Hypertext Transfer Protocol|It is an application layer protocol in the Internet protocol suite model for distributed, collaborative, hypermedia information systems. HTTP is the foundation of data communication for the World Wide Web, where hypertext documents include hyperlinks to other resources that the user can easily access. | 80 | TCP|
+|HTTPS - Secure Hypertext Transfer Protocol|It is the secure version of HTTP, which is the primary protocol used to send data between a web browser and a website. HTTPS is encrypted in order to increase security of data transfer. | 443 | TCP|
+|POP3 - Post Office Protocol|It is an application-layer Internet standard protocol used by e-mail clients to retrieve e-mail from a mail server. | 110 | TCP|
+|SNMP - Simple Network Management Protocol |It is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks and for modifying that information to change device behaviour. | 161,162 | TCP/UDP|
