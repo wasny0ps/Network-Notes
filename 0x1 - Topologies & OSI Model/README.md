@@ -73,3 +73,12 @@ In star topology, all the devices are **connected to a single hub** through a ca
 
 In a mesh topology, every device is connected to another device via a particular channel. 
 
+| Advantage | Problems |
+| :---:| :---:|
+|  Communication is very fast between the nodes.  |  The cost of cables is high as bulk wiring is required, hence suitable for less number of devices.  | 
+|Data is reliable because data is transferred among the devices through dedicated channels or links. |The cost of maintenance is high.|
+|Provides security and privacy.| Installation and configuration are difficult.|
+
+
+## Tree Topology
+
