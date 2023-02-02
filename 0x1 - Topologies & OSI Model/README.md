@@ -44,4 +44,16 @@ Bus topology, also known as line topology, is a type of network topology in whic
 
 ## Ring Topology
 
-<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/ring_topology.png"></p>
+<p align="center"><img height="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/ring_topology.png"></p>
+
+
+In this topology, it forms a ring connecting devices with exactly two neighboring devices. A number of repeaters are used for Ring topology with a large number of nodes, because if someone wants to send some data to the last node in the ring topology with 100 nodes, then the data will have to pass through 99 nodes to reach the 100th node. Hence to **prevent data loss repeaters are used in the network**. In this topology, the **Token Ring Passing protocol** is used by the workstations to transmit the data.
+
+| Advantage | Problems |
+| :---:| :---:|
+|  Device count doesn't affect network's performance.   |  The problem with the station affects the entire network.   | 
+
+
+## Star Topology
+
+
