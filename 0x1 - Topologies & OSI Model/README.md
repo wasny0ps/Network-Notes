@@ -25,8 +25,8 @@ Types Of Physical Topologies:
 - Bus Topology
 * Ring Topology
 + Star Topology
-- Tree Topology
-* Mesh Topology
+- Mesh Topology
+* Tree Topology
 
 
 ## Bus Topology
@@ -56,4 +56,20 @@ In this topology, it forms a ring connecting devices with exactly two neighborin
 
 ## Star Topology
 
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/star_topology.png"></p>
+
+In star topology, all the devices are **connected to a single hub** through a cable. This hub is the central node and all other nodes are connected to the central node. The hub can be passive in nature i.e., not an intelligent hub such as broadcasting devices, at the same time the hub can be intelligent known as an active hub. Active hubs have repeaters in them. Coaxial cables or RJ-45 cables are used to connect the computers.
+
+| Advantage | Problems |
+| :---:| :---:|
+|  Adding a new device is easy.  |  Requires a lot of cables.  | 
+|Problem detetection is snap. |If the concentrator (hub) on which the whole topology relies fails, the whole system will crash down.|
+
+
+## Mesh Topology
+
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/mesh_topology.png"></p>
+
+
+In a mesh topology, every device is connected to another device via a particular channel. 
 
