@@ -73,5 +73,15 @@ At the very top of the OSI Reference Model stack of layers, we find the Applicat
 # Common Used Protocols
 
 | Protocol | Function | Used Ports | Used Transport Protcol |
-|:---:|:---:|:---:|:---:|
+|:---|:---:|:---:|:---:|
 |FTP - File Transfer Protocol| | 21 | TCP|
+|SSH - Secure Shell| | 22 | TCP|
+|TELNET - Telecommunication Network| | 23 | TCP|
+|SMTP - Simple Mail Transfer Network| | 25 | TCP/UDP|
+|DNS - Domain Name Server| | 53 | UDP|
+|DHCP - Dynamic Host Configration Protocol| | 67,68 | UDP|
+|TFTP - Trivial File Transfer Protocol| | 69 | TCP|
+|HTTP - Hype Text Transfer Protocol| | 80 | TCP|
+|HTTPS - Secure Hyper Text Transfer Protocol| | 443 | TCP|
+|POP3 - Post Office Protocol| | 110 | TCP|
+|SNMP - Simple Network Managment Protocol || 161,162 | TCP/UDP|
