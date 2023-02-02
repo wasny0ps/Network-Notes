@@ -82,3 +82,4 @@ In a mesh topology, every device is connected to another device via a particular
 
 ## Tree Topology
 
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/tree_topology.png"></p>
