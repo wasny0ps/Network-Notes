@@ -1,6 +1,5 @@
 # Types Of Computer Networks
 
-<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x0%20-%20Basics%20Of%20Computer%20Networking/sources/network_devices.png"></p>
 
 **PAN**: **Personal Area Network**. It connects electronic devices within a user's immediate area. **The size of a PAN ranges from a few centimeters to a few meters**. One of the most common real-world examples of a PAN is the **connection between a Bluetooth earpiece and a smartphon**e. PANs can also connect laptops, tablets, printers, keyboards, and other computerized devices.
 
@@ -12,3 +11,8 @@
 
 **WAN**: **Wide Area Network**. It is a collection of local-area networks or other networks that communicate with one another.  A WAN is essentially a network of networks, with **the Internet the world's largest WAN**. Today, there are several types of WANs, built for a variety of use cases that touch virtually every aspect of modern life.
 
+Here is a picture about types of computer networks:
+
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/types_of_computer_networks.png"></p>
+
+## Physical Topologies
