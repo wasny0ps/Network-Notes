@@ -13,7 +13,7 @@
 
 Here is a picture about types of computer networks:
 
-<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/types_of_computer_networks.png"></p>
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies/source/types_of_computer_networks.png"></p>
 
 ## Physical Topologies
 
@@ -31,7 +31,7 @@ Types Of Physical Topologies:
 
 ## Bus Topology
 
-<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/bus_topology.png"></p>
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies/source/bus_topology.png"></p>
 
 Bus topology, also known as line topology, is a type of network topology in which all devices in the network are connected by one central **RJ-45 network cable or coaxial cable**. The single cable, where all data is transmitted between devices, is referred to as the bus, backbone, or trunk. It is bi-directional. It is a multi-point connection and a non-robust topology because if the backbone fails the topology crashes. In Bus Topology, various MAC (Media Access Control) protocols are followed by LAN ethernet connections.
 
@@ -44,7 +44,7 @@ Bus topology, also known as line topology, is a type of network topology in whic
 
 ## Ring Topology
 
-<p align="center"><img height="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/ring_topology.png"></p>
+<p align="center"><img height="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies/source/ring_topology.png"></p>
 
 
 In this topology, it forms a ring connecting devices with exactly two neighboring devices. A number of repeaters are used for Ring topology with a large number of nodes, because if someone wants to send some data to the last node in the ring topology with 100 nodes, then the data will have to pass through 99 nodes to reach the 100th node. Hence to **prevent data loss repeaters are used in the network**. In this topology, the **Token Ring Passing protocol** is used by the workstations to transmit the data.
@@ -56,7 +56,7 @@ In this topology, it forms a ring connecting devices with exactly two neighborin
 
 ## Star Topology
 
-<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/star_topology.png"></p>
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies/source/star_topology.png"></p>
 
 In star topology, all the devices are **connected to a single hub** through a cable. This hub is the central node and all other nodes are connected to the central node. The hub can be passive in nature i.e., not an intelligent hub such as broadcasting devices, at the same time the hub can be intelligent known as an active hub. Active hubs have repeaters in them. Coaxial cables or RJ-45 cables are used to connect the computers.
 
@@ -68,7 +68,7 @@ In star topology, all the devices are **connected to a single hub** through a ca
 
 ## Mesh Topology
 
-<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/mesh_topology.png"></p>
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies/source/mesh_topology.png"></p>
 
 
 In a mesh topology, every device is connected to another device via a particular channel. 
@@ -82,7 +82,7 @@ In a mesh topology, every device is connected to another device via a particular
 
 ## Tree Topology
 
-<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies%20%26%20OSI%20Model/source/tree-topology.png"></p>
+<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x1%20-%20Topologies/source/tree-topology.png"></p>
 
 In computer networking, tree topology is a type of network topology that **resembles a tree**. In a tree topology, there is one central node (the **trunk**), and each node is connected to the central node through a single path. Nodes can be thought of as branches coming off of the trunk. Tree topologies are often used to create large networks.
 
@@ -91,3 +91,6 @@ In computer networking, tree topology is a type of network topology that **resem
 |  Error detection and error correction are very easy.  |  If the central hub gets fails the entire system fails.  | 
 |We can add new devices to the existing network. |The cost is high because of the cabling.|
 |It allows the network to get isolated and also prioritize from different computers.| If new devices are added, it becomes difficult to reconfigure.|
+
+
+**_by wasny0ps_**
