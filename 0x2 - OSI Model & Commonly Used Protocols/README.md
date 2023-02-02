@@ -85,3 +85,5 @@ At the very top of the OSI Reference Model stack of layers, we find the Applicat
 |HTTPS - Secure Hypertext Transfer Protocol|It is the secure version of HTTP, which is the primary protocol used to send data between a web browser and a website. HTTPS is encrypted in order to increase security of data transfer. | 443 | TCP|
 |POP3 - Post Office Protocol|It is an application-layer Internet standard protocol used by e-mail clients to retrieve e-mail from a mail server. | 110 | TCP|
 |SNMP - Simple Network Management Protocol |It is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks and for modifying that information to change device behaviour. | 161,162 | TCP/UDP|
+
+**_by wasny0ps_**
