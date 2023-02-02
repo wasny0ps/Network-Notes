@@ -17,14 +17,14 @@ OSI stands for Open Systems Interconnection. It has been developed by ISO – �
 
 The data link layer is **responsible for the node-to-node delivery of the message**. The main function of this layer is to make sure data transfer is error-free from one node to another, over the physical layer. When a packet arrives in a network, it is the responsibility of DLL to transmit it to the Host using its **MAC address**. Data Link Layer is divided into two sublayers: 
 
-- Logical Link Control (LLC)
-* Media Access Control (MAC)
+- **Logical Link Control (LLC)**
+* **Media Access Control (MAC)**
 
 The packet received from the Network layer is further divided into frames depending on the **frame** size of **NIC(Network Interface Card)**. **DLL also encapsulates Sender and Receiver’s MAC address in the header**. 
 
 The Receiver’s MAC address is **obtained by placing an ARP(Address Resolution Protocol)** request onto the wire asking “Who has that IP address?” and the destination host will reply with its MAC address.
 
-> Packet in Data Link layer is referred to as **Frame**. Switch & Bridge are Data Link Layer devices.
+> Packet in Data Link layer is referred to as **Frame**. **Switch & Bridge are Data** Link Layer devices.
 
 ## Network Layer (Layer 3)
 
@@ -33,8 +33,45 @@ The network layer works for the transmission of data from one host to the other 
 - **Routing**: The network layer protocols determine which route is suitable from source to destination. This function of the network layer is known as routing.
 * **Logical Addressing**: In order to identify each device on internetwork uniquely, the network layer defines an addressing scheme. The sender & receiver’s IP addresses are placed in the header by the network layer. Such an address distinguishes each device uniquely and universally.
 
-> **Segment** in Network layer is referred to as Packet. Network layer is implemented by networking devices such as routers. 
+> **Segment** in Network layer is referred to as Packet. Network layer is implemented by networking devices such as **routers**.
+
+> Some firewalls are working on Network Layer. 
 
 ## Network Layer (Layer 4)
 
-The transport layer provides services to the application layer and takes services from the network layer. The data in the transport layer is referred to as Segments. It is responsible for the End to End Delivery of the complete message. The transport layer also provides the acknowledgement of the successful data transmission and re-transmits the data if an error is found.
+**The transport layer provides services to the application layer and takes services from the network layer**. The data in the transport layer is referred to as **Segments**. It is responsible for the End to End Delivery of the complete message. **The transport layer also provides the acknowledgement of the successful data transmission and retransmits the data if an error is found**. Transport Layer is called as **Heart of OSI model**. The functions of the transport layer are as follows:  
+
+- **Segmentation and Reassembly**: This layer accepts the message from the session layer, and breaks the message into smaller units. **Each of the segments produced has a header associated with it. The transport layer at the destination station reassembles the message**.
+
+* **Service Point Addressing**: In order to deliver the message to the correct process, the transport layer header includes a type of address called service point address or port address. Thus by specifying this address,**the transport layer makes sure that the message is delivered to the correct process**.
+
+> Data in the Transport Layer is called as **Segments**. Transport layer is operated by the Operating System. It is a part of the OS and **communicates with the Application Layer by making system calls**. 
+
+## Session Layer (Layer 5)
+
+This layer is responsible for the **establishment of connection, maintenance of sessions, authentication, and also ensures security**.
+
+- **All the below 3 layers(including Session Layer) are integrated as a single layer in the TCP/IP model as “Application Layer”**.
+
+> Implementation of these 3 layers is done by the network application itself. These are also known as Upper Layers or Software Layers. 
+
+## Presentation Layer (Layer 6)
+
+The presentation layer is also called the **Translation layer**. The data from the application layer is extracted here and manipulated as per the required format to transmit over the network. The functions of the presentation layer are : 
+
+- **Translation**
+- **Encryption/ Decryption**
+- **Compression**
+
+
+##  Application Layer (Layer 7)
+
+At the very top of the OSI Reference Model stack of layers, we find the Application layer which is implemented by the network applications. **These applications produce the data, which has to be transferred over the network**. This layer also serves as a window for the application services to access the network and for displaying the received information to the user. 
+
+> Some firewalls are working on Application Layer.
+
+# Common Used Protocols
+
+| Protocol | Function | Used Ports | Used Transport Protcol |
+|:---:|:---:|:---:|:---:|
+|FTP - File Transfer Protocol| | 21 | TCP|
