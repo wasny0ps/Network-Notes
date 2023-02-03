@@ -2,7 +2,7 @@
 
 Before configration stuff, you must create a topology. Here is my example topology which is not configured before. Let's do it.
 
-<img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/start.png" >
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/start.png" ></p>
 
 
 ## Router Configration
