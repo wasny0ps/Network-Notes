@@ -1,5 +1,10 @@
 # Network Configration
 
+Before configration stuff, you must create a topology. Here is my example topology which is not configured before. Let's do it.
+
+<img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/start.png" >
+
+
 ## Router Configration
 
 After creating a topology, the first thing you need to do is to give ip and subnet mask to the legs of the router in the network. Then you can do other configration in router CLI. However, before configrate the router, we should look at **CLI modes**. 
