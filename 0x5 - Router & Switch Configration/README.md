@@ -112,7 +112,7 @@ After connecting an endpoint device to the network device with a cable, the firs
 
 Here is my finished example topology.
 
-<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/finish.png" ></p>
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/finish.png" ></p>
 
 
 
