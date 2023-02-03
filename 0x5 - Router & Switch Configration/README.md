@@ -47,8 +47,13 @@ Thereafter, when we want to pass on to privilege mode, router ask us enable pass
 
 In order for the router to communicate with the network and end devices, IP and subnetmask must be given to the leg of the network where it is located.
 
-<img width="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/ip.png" >
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/ip.png" >
 
+## Telnet Connection
+
+Telnet connection is used for remote access to the router. Telnet configuration is done in global configuration mode. FIrst of all, we must set username and password for telnet connection. Secondly, we should define how many users can access with telnet to router.
+
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/telnet.png" >
 
 
 
