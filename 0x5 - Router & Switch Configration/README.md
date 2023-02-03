@@ -49,6 +49,13 @@ In order for the router to communicate with the network and end devices, IP and 
 
 <img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/ip.png" >
 
+## Give Console Password
+
+Generally console password is given when connect the device with console cable (rollover cable). As usual as console configuration is done in global configuration mode with local credentials. 
+
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/console.png" >
+
+
 ## Telnet Configration
 
 Telnet connection is used for remote access to the router. Telnet configuration is done in global configuration mode. FIrst of all, we must set username and password for telnet connection. Secondly, we should define how many users can access with telnet to router.
