@@ -37,8 +37,10 @@ Change CLI mode is global configuration mode. And use `hostname` command.
 
 Enable password is used to limit the actions to be taken on the router to only certain people. You can give enable password by typing `enable secret yourpassword`. 
 
-<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/enable.png" >
+<img width="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/enable.png" >
+<img width="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/en.png" >
 
+> While the enable password is stored as plain text in the running-config file, the enable secret is kept in a hashed state. For this reason, it is recommended to use the enable secret.
 
 ## Switch Configration
 
