@@ -23,9 +23,22 @@ After that, let's do this configration one by one.
 
 ## Set Clock And Time Zone
 
-Firstly, we must pass on to enable mode. Then, type  `set clock` command.
+Firstly, we must pass on to enable mode. Then, type  `clock set` command.
 
-![clock](https://user-images.githubusercontent.com/87646106/216663831-0c7e06d8-6d7c-418f-af7b-857eae727451.png)
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/clock.png" >
+
+## Change Router Hostname
+
+Change CLI mode is global configuration mode. And use `hostname` command.
+
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/hostname.png" >
+
+## Give Enable Mode Password
+
+Enable password is used to limit the actions to be taken on the router to only certain people. You can give enable password by typing `enable secret yourpassword`. 
+
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/enable.png" >
+
 
 ## Switch Configration
 
