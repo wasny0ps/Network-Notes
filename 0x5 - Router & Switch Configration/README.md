@@ -101,7 +101,7 @@ Even if a switch is given an IP and subnet mask, the switch cannot talk to the r
 
 After connecting an endpoint device to the network device with a cable, the first thing you need to do is to make the necessary configurations to the endpoint devices. The first of these configurations is to **assign an IP and subnetmask** to the device and to **give the IP of the default gateway**.
 
-<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/pc.png" >
+<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/pc.png" ></p>
 
 
 **_by wasny0ps_**
