@@ -23,7 +23,7 @@ After that, let's do this configration one by one.
 
 ## Set Clock And Time Zone
 
-Firstly, we must pass on to enable mode. Then, type  `clock set` command.
+Firstly, we must pass on to privilege mode. Then, type  `clock set` command.
 
 <img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/clock.png" >
 
@@ -39,7 +39,18 @@ Enable password is used to limit the actions to be taken on the router to only c
 
 <img width="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/enable.png" >
 
+Thereafter, when we want to pass on to privilege mode, router ask us enable password.
+
 > While the enable password is stored as plain text in the running-config file, the enable secret is kept in a hashed state. For this reason, it is recommended to use the enable secret.
+
+## Assign IP And Subnet Mask
+
+In order for the router to communicate with the network and end devices, IP and subnetmask must be given to the leg of the network where it is located.
+
+<img width="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/ip.png" >
+
+
+
 
 ## Switch Configration
 
