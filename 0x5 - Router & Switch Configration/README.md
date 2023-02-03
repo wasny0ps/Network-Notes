@@ -25,13 +25,13 @@ After that, let's do this configration one by one.
 
 Firstly, we must pass on to privilege mode. Then, type  `clock set` command.
 
-<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/clock.png" >
+<img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/clock.png" >
 
 ## Change Router Hostname
 
 Change CLI mode is global configuration mode. And use `hostname` command.
 
-<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/hostname.png" >
+<img height="50" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/hostname.png" >
 
 ## Give Enable Mode Password
 
@@ -75,8 +75,20 @@ Sometimes we want to save copy of our running-config to startup-config. In this 
 
 <img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/nvram.png" >
 
+<!--## FTP And TFTP Configration
+
+All companies want to backup and save their routers and switches. In this scenario, most of the time backups are sent to ftp or tftp server. So, it is important to know how to copy the router configuration file to the server.-->
+
+
 
 ## Switch Configration
+
+## Vlan Configration
+
+Vlans are networks created within a local network. Thus, you can completely isolate these networks from each other by dividing your local network into parts. Companies often use this method to ensure security between networks within the company.
+
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/switch.png" >
+
 
 ## End Point Device Configration
 
