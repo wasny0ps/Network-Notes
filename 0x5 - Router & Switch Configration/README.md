@@ -69,6 +69,13 @@ They are used for the same purposes as SSH, telnet. Nevertheless, **SHH is more 
 <img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/ssh.png" >
 
 
+## NVRAM Configration
+
+Sometimes we want to save copy of our running-config to startup-config. In this case, we can copy running-config to NVRAM.
+
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/nvram.png" >
+
+
 ## Switch Configration
 
 ## End Point Device Configration
