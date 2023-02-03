@@ -90,8 +90,16 @@ Vlans are networks created within a local network. Thus, you can completely isol
 <img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/switch.png" >
 
 
+## Default Gateway Configration
+
+Even if a switch is given an IP and subnet mask, the switch cannot talk to the router. This is because there is no router IP previously defined or forwarded to it. From here, we can say that a default router ip for switches and endpoint devices is important.
+
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/defaultgateway.png" >
+
+
 ## End Point Device Configration
 
 After connecting an endpoint device to the network device with a cable, the first thing you need to do is to make the necessary configurations to the endpoint devices. The first of these configurations is to **assign an IP and subnetmask** to the device and to **give the IP of the default gateway**.
 
-In this topology 
+
+**_by wasny0ps_**
