@@ -49,12 +49,17 @@ In order for the router to communicate with the network and end devices, IP and 
 
 <img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/ip.png" >
 
-## Telnet Connection
+## Telnet Configration
 
 Telnet connection is used for remote access to the router. Telnet configuration is done in global configuration mode. FIrst of all, we must set username and password for telnet connection. Secondly, we should define how many users can access with telnet to router.
 
 <img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/telnet.png" >
 
+## SSH Configration
+
+They are used for the same purposes as SSH, telnet. Nevertheless, **SHH is more secure way to remote access than telnet**. Therefore, it is recommended to use the SHH while remote access to devices. The first step of SHH configration is create id_rsa file, which is SSH key use for authenticate the identity of a user or process that wants to access a remote system using the SSH protocol, with generate a crypto key, **which is RSA algorithym combination of domain name and router's hostname**. The second thing is defined id_rsa file size and use ssh version 2.
+
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x5%20-%20Router%20%26%20Switch%20Configration/source/ssh.png" >
 
 
 ## Switch Configration
