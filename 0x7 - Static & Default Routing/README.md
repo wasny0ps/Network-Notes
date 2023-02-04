@@ -44,10 +44,15 @@ After configration, my configrated topology looks like this.
 
 <p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x7%20-%20Static%20%26%20Default%20Routing/source/first_conf.png" ></p>
 
-Let's manually configrate routers for teach foreign networks.
+Before manually configure routers for teach foreign networks, you should check if you give correct ip address and subnet mask to router's leg in 192.168.30.0/24 network or not. This picture is taken when hadn't give ip addresses in 192.168.30.0/24 network. Please be careful.
 
-You can teach with `ip route` command.
 
+## Manually Teach Networks
+
+You can teach foreign networks to both routers with `ip route -foreign network IP adress- -foreign network subnet mask- -ip address of the leg of the router to be routed in that network-` command in global configuration mode.
+
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x7%20-%20Static%20%26%20Default%20Routing/source/r1.png" >
+<img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x7%20-%20Static%20%26%20Default%20Routing/source/r2.png" >
 
 
 ## Default Routing
