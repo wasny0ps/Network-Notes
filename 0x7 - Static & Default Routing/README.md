@@ -35,7 +35,14 @@ The disadvantages of static routing are:
 
 At the starting point of static routing is connect end point devices to network devices. Here is my example topology.
 
-<img src="" >
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x7%20-%20Static%20%26%20Default%20Routing/source/static_routing_start.png" ></p>
+
+## Step 1 : Configure The Routers And Devices
+First of all, we need three different IP blocks so that the routers can communicate with the local networks and the routers with each other. My IP blocks are **192.168.10.0/24**, **192.168.20.0/24**, **192.168.30.0/24**. If you don't know how to configrate routers and devices you can learn from [here](https://github.com/wasny0ps/Network-Notes/tree/main/0x5%20-%20Router%20%26%20Switch%20Configration).
+
+My configrated topology looks like this.
+
+
 
 ## Default Routing
 
