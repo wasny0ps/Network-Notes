@@ -54,6 +54,8 @@ You can teach foreign networks to both routers with `ip route -foreign network I
 <img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x7%20-%20Static%20%26%20Default%20Routing/source/r1.png" >
 <img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x7%20-%20Static%20%26%20Default%20Routing/source/r2.png" >
 
+You can test it by send ping to another network. If it send, it is no problem your topology.
+
 
 ## Default Routing
 
