@@ -31,6 +31,11 @@ The disadvantages of static routing are:
 
 - In large networks this can be **unmanageable**.
 
+## Example Of Static Routing
+
+At the starting point of static routing is connect end point devices to network devices. Here is my example topology.
+
+<img src="" >
 
 ## Default Routing
 
