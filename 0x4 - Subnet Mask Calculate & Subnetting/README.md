@@ -43,6 +43,37 @@ Afterwards, we draw a perpendicular line to divide it into the subnet immediatel
 
 <p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/subnetting.png"></p> 
 
+If we take the example in the picture as reference, we have **4 subnets**. There are : 
+
+|Subnet|Network Address| Broadcast Address|Avaliable IP Range|
+|:-:|:-:|:-:|:-:|
+|A|192.168.10.0|192.168.10.63|192.168.10.1-62|
+|B|192.168.10.64|192.168.10.127|192.168.10.65-126|
+|C|192.168.10.128|192.168.10.191|192.168.10.129-190|
+|D|192.168.10.192|192.168.10.255|192.168.10.193-254|
+
+# Subnetting With Serial Connection
+
+The Serial Connection is used to create a WAN connection with the help of a service provider who offers a dedicated leased line to its customers.
+Business organizations buy leased lines to establish a WAN connection to connect with different offices and business sites that could physically be thousands of miles apart. Businesses have to pay for these leased lines according to the service availed. And accordingly, the service providers charge for this service i.e. based on the bandwidth they offer to their client organizations.
+
+One of the connections used for a leased line is the Serial Connection in Cisco based networks. If we have Cisco routers on both sides of the network then the default encapsulation known as HDLC will be used by the Cisco routers. However, this will not work with other brands routers (i.e. with the non-Cisco routers) because this protocol is solely a Cisco proprietary.
+If we want to establish successful connection with router of other vendor then we must configure the same data link protocol on both router. If there will be a mismatch then connection cannot be established and we will see the status of the interface as down under data link.
+
+If we are configuring new cisco router then by default the data link protocol would be HDLC however if we are configuring old device then we should check the configuration and if there is a mismatch then we have to configure the same protocol on both routers.
+
+In this example, we will configure a Serial Connection between the routers. We will set up a clock rate at 56000, which will provide the speed of 56 Kbps. In a real world, the DCE side of the cable is configured by the service provider. Generally, the clock speed is configured according to the availability of the bandwidth speed that the service provider is offering. The following example uses a serial cable that will simulate a service provider. We will configure the clock speed on the router that has DCE side connected.
+
+## Default Configration
+
+Before serial interface configuration, we must subnetting network in the topology and assign IP address correctly. In my example topology, I divided 192.168.10.0/24 network into 4 subnetworks. After that, I configured routers and switches. In what fallows, I connected four routers with serial cable. If you dont't know how to configure, you can learn from [here](https://github.com/wasny0ps/Network-Notes/tree/main/0x5%20-%20Router%20%26%20Switch%20Configration).
+
+To use serial connection, you must use serial cable with **NIM-2T** module in router. When you turn off your router you can add this module to physical port as shown in example picture.
+
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/serial.png"></p> 
+
+
+## Serial Interface Configuration
 
 **_by wasny0ps_**
 
