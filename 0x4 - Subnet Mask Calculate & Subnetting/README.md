@@ -37,4 +37,7 @@ The process of dividing a network into 2/more networks is called subnetting. A s
 
 Subnetting works are smiliar to ip addressing process. Again, we convert the IP address into binary format to find the subnet mask and network address. However, there is an important point which means our network ID is current network ID + intended numbers of subnet. Please, keep an eye out! 
 
-Afterwards, we draw a perpendicular line to divide it into the subnet immediately after the network ID. It is where the magic happens. After the last dot, we need to increment like 1,10,11,100,101,110 the remainder starting from 0.
+Afterwards, we draw a perpendicular line to divide it into the subnet immediately after the network ID. It is where the magic happens. After the last dot, we need to increment like 1,10,11,100,101,110 the remainder starting from 0. Let's look at pictures for better understanding.
+
+
+
