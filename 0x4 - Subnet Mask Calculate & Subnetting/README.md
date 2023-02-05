@@ -66,11 +66,15 @@ In this example, we will configure a Serial Connection between the routers. We w
 
 ## Default Configration
 
-Before serial interface configuration, we must subnetting network in the topology and assign IP address correctly. In my example topology, I divided 192.168.10.0/24 network into 4 subnetworks. After that, I configured routers and switches. In what fallows, I connected four routers with serial cable. If you dont't know how to configure, you can learn from [here](https://github.com/wasny0ps/Network-Notes/tree/main/0x5%20-%20Router%20%26%20Switch%20Configration).
+In the first step, we must subnetting network in the topology and assign IP address correctly. In my example topology, I divided 192.168.10.0/24 network into 4 subnetworks. After that, I configured routers and switches. In what fallows, I connected four routers with serial cable. If you dont't know how to configure, you can learn from [here](https://github.com/wasny0ps/Network-Notes/tree/main/0x5%20-%20Router%20%26%20Switch%20Configration).
 
 To use serial connection, you must use serial cable with **NIM-2T** module in router. When you turn off your router you can add this module to physical port as shown in example picture.
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/serial.png"></p> 
+<p align="center"><img width="500" height="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/serial.png"></p> 
+
+Later on, you can cord serial cable to serail port of the router. Before serial interface configuration, my example topology looks like:
+
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/subnetted_topology.png"></p> 
 
 
 ## Serial Interface Configuration
