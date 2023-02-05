@@ -74,7 +74,7 @@ To use serial connection, you must use serial cable with **NIM-2T** module in ro
 
 Later on, you can cord serial cable to serail port of the router. Before serial interface configuration, my example topology looks like:
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/topology.png"></p> 
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/subnetted-topology.png"></p> 
 
 
 ## Serial Interface Configuration
