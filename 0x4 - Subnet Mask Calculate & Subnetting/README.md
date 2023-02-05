@@ -1,6 +1,6 @@
 # Subnet Mask Calculate
 
-## IP Addressing
+## IP Address and Subnet Mask
 A 32-bit IP address uniquely identifies a single device on an IP network. The 32 binary bits are divided into the host and network sections by the subnet mask but they are also broken into four 8-bit octets.
 
 Because binary is challenging, we convert each octet so they are expressed in dot decimal. This results in the characteristic dotted decimal format for IP addresses—for example, 172.16.254.1. The range of values in decimal is 0 to 255 because that represents 00000000 to 11111111 in binary.
@@ -27,3 +27,14 @@ Here some more examples table about ip addressing.
 |100.100.100.100/8|24|100.0.0.0|100.255.255.255 |255.0.0.0|
 |205.21.53.13/3|29|192.0.0.0|223.255.255.255 |224.0.0.0|
 |114.182.47.31/9|23|114.128.0.0|114.255.255.255  |255.128.0.0|
+
+
+# Subnetting
+
+The process of dividing a network into 2/more networks is called subnetting. A subnet, or subnetwork, is a network **inside a network**. **Subnets make networks more efficient**. Through subnetting, network traffic can travel a shorter distance without passing through unnecessary routers to reach its destination. Also, we can **always create 2^n subnets in a network**. For example if we wanted to dividing 192.168.10.0/24 network into 3 subnetworks, we wouldn't. Instead, we can dividing 192.168.10.0/24 network into 4 subnetworks and use three of them. Time to understand how subnetting works.
+
+## How Divide Subnetting?
+
+Subnetting works are smiliar to ip addressing process. Again, we convert the IP address into binary format to find the subnet mask and network address. However, there is an important point which means our network ID is current network ID + intended numbers of subnet. Please, keep an eye out! 
+
+Afterwards, we draw a perpendicular line to divide it into the subnet immediately after the network ID. It is where the magic happens. After the last dot, we need to increment like 1,10,11,100,101,110 the remainder starting from 0.
