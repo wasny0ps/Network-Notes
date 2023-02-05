@@ -70,6 +70,20 @@ At the very top of the OSI Reference Model stack of layers, we find the Applicat
 
 > Some firewalls are working on Application Layer.
 
+## TCP 
+
+TCP (Transmission Control Protocol) is one of the main protocols of the Internet protocol suite. **It lies between the Application and Network Layers** which are used in providing reliable delivery services. It is a **connection-oriented protocol** for communications that helps in the exchange of messages between different devices over a network. The Internet Protocol (IP), which establishes the technique for sending data packets between computers, works with TCP. TCP uses a three-way handshake to establish a reliable connection.
+
+### Three Way Handshake
+
+The connection is full duplex, and both sides synchronize (SYN) and acknowledge (ACK) each other. The exchange of these four flags is performed in three steps are SYN, SYN-ACK, and ACK as shown in picture.
+
+<p align="center"><img src=""></p>
+
+## UDP
+
+## TCP vs UDP
+
 # Common Used Protocols
 
 | Protocol | Function | Used Ports | Used Transport Protcol |
