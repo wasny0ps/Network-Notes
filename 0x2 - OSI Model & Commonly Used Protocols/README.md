@@ -78,11 +78,45 @@ TCP (Transmission Control Protocol) is one of the main protocols of the Internet
 
 The connection is full duplex, and both sides synchronize (SYN) and acknowledge (ACK) each other. The exchange of these four flags is performed in three steps are SYN, SYN-ACK, and ACK as shown in picture.
 
-<p align="center"><img src=""></p>
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x2%20-%20OSI%20Model%20%26%20Commonly%20Used%20Protocols/source/tcp_three_way_handshake.png"></p>
+
+- **Step 1 (SYN)** : In the first step, the client wants to establish a connection with a server, so it sends a segment with SYN(Synchronize Sequence Number) which informs the server that the client is likely to start communication and with what sequence number it starts segments with.
+
+- **Step 2 (SYN+ACK)** : Server responds to the client request with SYN-ACK signal bits set. Acknowledgement(ACK) signifies the response of the segment it received and SYN signifies with what sequence number it is likely to start the segments with.
+
+- **Step 3 (ACK)** : In the final part client acknowledges the response of the server and they both establish a reliable connection with which they will start the actual data transfer.
 
 ## UDP
 
+UDP (User Datagram Protocol) is a communications protocol, used across the Internet. It is specifically used for **time-sensitive transmissions** such as video playback or DNS lookups. It works by creating a connectionless transmission model that **requires a minimum protocol mechanism**.
+
+UDP enables process-to-process communication and works by using Internet Protocols to encapsulate data in a UDP packet. This packed has its header information edited to include; source,destination ports, packet length and checksum. After UDP packets are encapsulated in an Internet Protocol packet, they’re sent off to their destinations.
+
+It is best used for real time services such as:
+
+- Gaming
+- Voice or video communication
+- Live conferences
+
+> A downside to using UDP is that it is an **unreliable protocol** as it doesn’t require an established connection prior to data transfer.
+
 ## TCP vs UDP
+
+| Basics | TCP| UDP|
+|---|---|---|
+|Type of Service|TCP is a connection-oriented protocol. Connection-orientation means that the communicating devices should establish a connection before transmitting data and should close the connection after transmitting the data.|UDP is the Datagram-oriented protocol. This is because there is no overhead for opening a connection, maintaining a connection, and terminating a connection. UDP is efficient for broadcast and multicast types of network transmission.|
+|Reliability	|TCP is reliable as it guarantees the delivery of data to the destination router.	|The delivery of data to the destination cannot be guaranteed in UDP.|
+|Error checking mechanism	| TCP provides extensive error-checking mechanisms because of it provides flow control and acknowledgment of data.|UDP has only the basic error checking mechanism using checksums.|
+|Acknowledgment| An acknowledgment segment is present.| No acknowledgment segment.|
+|Sequence| Sequencing of data is a feature of TCP. This means that packets arrive in order at the receiver.	|There is no sequencing of data in UDP. If the order is required, it has to be managed by the application layer.|
+|Speed| TCP is comparatively slower than UDP.	|UDP is faster, simpler, and more efficient than TCP.|
+|Retransmission| Retransmission of lost packets is possible in TCP, but not in UDP.	|There is no retransmission of lost packets in UDP.|
+|Header Length| TCP has a 20-60 bytes variable length header.	|UDP has an 8 bytes fixed-length header.|
+|Weight| TCP is heavy-weight.	| UDP is lightweight.|
+|Handshaking Techniques|Uses handshakes such as SYN, ACK, SYN-ACK| It’s a connectionless protocol which means no handshake.|
+|Broadcasting	|TCP doesn’t support Broadcasting.| UDP supports Broadcasting.|
+|Stream Type| The TCP connection is a byte stream.	| UDP connection is message stream.|
+|Overhead	| Low but higher than UDP.	| Very low.|
 
 # Common Used Protocols
 
