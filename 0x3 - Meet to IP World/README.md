@@ -47,6 +47,32 @@ IPv4 has a header of 20-60 bytes | IPv6 has header of 40 bytes fixed |
 |IPv4’s  IP addresses are divided into five different classes. Class A, B, C, D, E| IPv6 does not have any classes of IP address|
 |IPv4 supports VLSM(Variable Length subnet mask) | IPv6 does not support VLSM|	
 
-## IPv6 Abridgment
+## Shortening IPv6 Addresses
+
+IPv6 addresses are hexadecimal and since they are 128-bit, they are quite long. Imagine you have to call a friend and ask him/her to ping the following address:
+- 2041:0000:140F:0000:0000:0000:875B:131B
+
+To make our lives a bit better, IPv6 addresses can be shortened.  Let’s take a look at some examples and I’ll show you how it works:
+
+- **Original** : 2041:0000:140F:`0000:0000:0000`:875B:131B
+- **Short** : 2041:0000:140F::875B:131B
+
+If there is a string of zeros then you can remove them once. In the example above I removed the entire 0000:0000:0000 part. You can only do this **once**, your IPv6 device will fill up the remaining space with zeros until it has a 128 bit address. There is more however, the address can be shortened even more:
+
+- **Short**: 2041:`0000`:140F::875B:131B
+- **Shorter**: 2041:0:140F::875B:131B
+
+Leading zeros can also be removed, here’s another address to demonstrate this:
+
+- **Original**: 2001:**000**1:**000**2:**000**3:**000**4:**000**5:**000**6:**000**7
+- **Short**: 2001:1:2:3:4:5:6:7
+
+By removing these zeros we get a nice short IPv6 address. To summarize these rules:
+
+- An entire string of zeros can be removed, you can only do this once.
+- 4 zeros can be removed, leaving only a single zero.
+- Leading zeros can be removed.
+
+
 
 **_by wasn0ps_**
