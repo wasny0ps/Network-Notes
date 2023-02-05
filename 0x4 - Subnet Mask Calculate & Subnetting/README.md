@@ -39,7 +39,10 @@ Subnetting works are smiliar to ip addressing process. Again, we convert the IP 
 
 Afterwards, we draw a perpendicular line to divide it into the subnet immediately after the network ID. It is where the magic happens. After the last dot, we need to increment like 1,10,11,100,101,110 the remainder starting from 0. Let's look at example pictures for better understanding.
 
-<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/subnet.png"></p> 
+<p align="left"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/subnet.png"></p> 
 
-<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/subnetting.png"></p> 
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/subnetting.png"></p> 
+
+
+**_by wasny0ps_**
 
