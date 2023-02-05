@@ -81,6 +81,8 @@ Later on, you can cord serial cable to serail port of the router. Before serial 
 
 Now, we will assign IP address and subnet mask in each router CLI and set up a clock rate at 56000 for `Router 0,Router 1,Router 2`. After that, I will use static routing. If you don't know static routing, learn form [here](https://github.com/wasny0ps/Network-Notes/tree/main/0x7%20-%20Static%20%26%20Default%20Routing).
 
+
+
 ### Task 1
 
 #### Router 0
@@ -108,7 +110,53 @@ Now, we will assign IP address and subnet mask in each router CLI and set up a c
 
 ### Task 2
 
+#### Router 1
+
+- Router(config)#interface serial 0/1/0
+
+- Router(config-if)# ip address 22.22.22.1 255.255.255.0
+
+- Router(config-if)# no shut
+
+
+#### Router 2
+
+- Router(config)#interface serial 0/1/0
+
+- Router(config-if)# ip address 22.22.22.2 255.255.255.0
+
+- Router(config-if)# no shut
+
+#### Router 1
+
+- Router(config)#interface serial 0/1/0
+
+- Router(config-if)# clock rate 56000
+
 ### Task 3
+
+#### Router 2
+
+- Router(config)#interface serial 0/1/1
+
+- Router(config-if)# ip address 33.33.33.1 255.255.255.0
+
+- Router(config-if)# no shut
+
+
+#### Router 3
+
+- Router(config)#interface serial 0/1/0
+
+- Router(config-if)# ip address 33.33.33.33 255.255.255.0
+
+- Router(config-if)# no shut
+
+#### Router 2
+
+- Router(config)#interface serial 0/1/1
+
+- Router(config-if)# clock rate 56000
 
 ### Task 4
 
