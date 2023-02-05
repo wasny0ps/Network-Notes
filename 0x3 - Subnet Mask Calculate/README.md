@@ -30,8 +30,9 @@ In the IPv4 IP address space, **there are five classes: A, B, C, D and E**. Each
 | IPv4 |IPv6 |
 |---|---|
 |Example of IPv4:  66.94.29.13|Example of IPv6: 2001:0000:3238:DFE1:0063:0000:0000:FEFB|
-| IPv4 loopback (localhost) adress : 127.0.0.1 | IPv6 loopback address : **0:0:0:0:0:0:1** or **::1**|
-|IPv4 has a 32-bit address length | IPv6 has a 128-bit address length|
+| IPv4 loopback (localhost) adress : **127.0.0.1** | IPv6 loopback address : **0:0:0:0:0:0:1** or **::1**|
+|IPv4 has a **32-bit** address length | IPv6 has a **128-bit** address length|
+| IPv4 consist of 4 fields which are separated by dot (.) | IPv6 consist of 8 fields, which are separated by colon (:)|
 |It supports manual and DHCP address configuration|It supports Auto and renumbering address configuration|
 |In IPv4 end to end, connection integrity is Unachievable|In IPv6 end to end, connection integrity is Achievable|
 |It can generate 4.29×109 address space|Address space of IPv6 is quite large it can produce 3.4×1038 address space|
@@ -46,4 +47,6 @@ IPv4 has a header of 20-60 bytes | IPv6 has header of 40 bytes fixed |
 |IPv4’s  IP addresses are divided into five different classes. Class A, B, C, D, E| IPv6 does not have any classes of IP address|
 |IPv4 supports VLSM(Variable Length subnet mask) | IPv6 does not support VLSM|	
 
-# Subnet Mask Calculate
+## IPv6 Abridgment
+
+**_by wasn0ps_**
