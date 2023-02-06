@@ -84,7 +84,7 @@ Now, we will assign IP address and subnet mask in each router CLI and set up a c
 
 Since there are a lot of codes that need to be written, I found it more convenient to transfer them to a file in order instead of writing them here. You can access all codes from [here](https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/configration.txt).
 
-Here is my finished example topology and (file)[].
+Here is my finished example topology and [file](https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/subnetting_with_serial_connection_routing_with_default.pkt).
 
 <p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/end_topology.png"></p> 
 
