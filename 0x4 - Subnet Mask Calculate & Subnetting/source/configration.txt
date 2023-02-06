@@ -1,0 +1,105 @@
+Task 1
+
+Router 0
+
+Router(config)#interface serial 0/1/0
+
+Router(config-if)# ip address 11.11.11.1 255.255.255.0
+
+Router(config-if)# no shut
+
+Router 1
+
+Router(config)#interface serial 0/1/1
+
+Router(config-if)# ip address 11.11.11.2 255.255.255.0
+
+Router(config-if)# no shut
+
+Router 0
+
+Router(config)#interface serial 0/1/0
+
+Router(config-if)# clock rate 56000
+
+Task 2
+
+Router 1
+
+Router(config)#interface serial 0/1/0
+
+Router(config-if)# ip address 22.22.22.1 255.255.255.0
+
+Router(config-if)# no shut
+
+Router 2
+
+Router(config)#interface serial 0/1/0
+
+Router(config-if)# ip address 22.22.22.2 255.255.255.0
+
+Router(config-if)# no shut
+
+Router 1
+
+Router(config)#interface serial 0/1/0
+
+Router(config-if)# clock rate 56000
+
+Task 3
+
+Router 2
+
+Router(config)#interface serial 0/1/1
+
+Router(config-if)# ip address 33.33.33.1 255.255.255.0
+
+Router(config-if)# no shut
+
+Router 3
+
+Router(config)#interface serial 0/1/0
+
+Router(config-if)# ip address 33.33.33.33 255.255.255.0
+
+Router(config-if)# no shut
+
+Router 2
+
+Router(config)#interface serial 0/1/1
+
+Router(config-if)# clock rate 56000
+
+Task 4
+
+Router 0
+
+Router(config)# ip route 192.168.10.64 255.255.255.192 11.11.11.2
+
+Router(config)# ip route 192.168.10.128 255.255.255.192 11.11.11.2
+
+Router(config)# ip route 192.168.10.192 255.255.255.192 11.11.11.2
+
+Router 1
+
+Router(config)# ip route 192.168.10.10 255.255.255.192 11.11.11.1
+
+Router(config)# ip route 192.168.10.128 255.255.255.192 22.22.22.2
+
+Router(config)# ip route 192.168.10.192 255.255.255.192 22.22.22.2
+
+Router 2
+
+Router(config)# ip route 192.168.10.192 255.255.255.192 33.33.33.2
+
+Router(config)# ip route 192.168.10.64 255.255.255.192 22.22.22.1
+
+Router(config)# ip route 192.168.10.0 255.255.255.192 22.22.22.1
+
+Router 3
+
+Router(config)# ip route 192.168.10.128 255.255.255.192 33.33.33.1
+
+Router(config)# ip route 192.168.10.64 255.255.255.192 33.33.33.1
+
+Router(config)# ip route 192.168.10.0 255.255.255.192 33.33.33.1
