@@ -63,9 +63,7 @@ You can test it by send ping to another network. If it send, it is no problem yo
 
 Default routing can be considered a special type of static routing. The difference between a normal static route and a default route is that a default route is used to send packets destined to any unknown destination to a single next hop address. To understand how this works, let's suppose that we have two routers call Router1 and Router2. Router1 is directly connected with 192.168.1.1 IP's leg to 192.168.1.0/24 network and there is any static routes in it. When it receives a packet destined to 192.168.5.0/24 it will drop it since it does not know where the destination network is. If a default route is added in Router1 with next hop address of Router2, all packets destined to any unknown destination, such as 192.168.5.0/24 will be sent to Router2.
 
-Default routes are useful when dealing with a network with a single exit point. It is also useful when a bulk of destination networks have to be routed to a single next-hop device. When adding a default route, you should ensure that the next-hop device can route the packet further, or else the next hop device will drop the packet.
-
-Another point to remember is that when a more specific route to a destination exists in the routing table, the router will use that route and not the default route. The only time the router will use the default route is when a specific route does not exist.
+Default routes are useful when dealing with a network with a single exit point. It is also useful when a bulk of destination networks have to be routed to a single next-hop device. When adding a default route, you should ensure that the next-hop device can route the packet further, or else the next hop device will drop the packet. Another point to remember is that when a more specific route to a destination exists in the routing table, the router will use that route and not the default route. The only time the router will use the default route is when a specific route does not exist.
 
 
 ## Dynamic Routing
