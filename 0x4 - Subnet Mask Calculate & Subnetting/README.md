@@ -86,7 +86,7 @@ Since there are a lot of codes that need to be written, I found it more convenie
 
 Here is my finished example topology and (file)[].
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/end.png"></p> 
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/end_topology.png"></p> 
 
 
 **_by wasny0ps_**
