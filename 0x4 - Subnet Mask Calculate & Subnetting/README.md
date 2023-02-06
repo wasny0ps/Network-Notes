@@ -82,8 +82,11 @@ Later on, you can cord serial cable to serail port of the router. Before serial 
 Now, we will assign IP address and subnet mask in each router CLI and set up a clock rate at 56000 for `Router 0,Router 1,Router 2`. After that, I will use static routing. If you don't know static routing, learn form [here](https://github.com/wasny0ps/Network-Notes/tree/main/0x7%20-%20Static%20%26%20Default%20Routing).
 
 
+Since there are a lot of codes that need to be written, I found it more convenient to transfer them to a file in order instead of writing them here. You can access all codes from [here](https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/configration.txt).
 
+Here is my finished example topology and (file)[].
 
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x4%20-%20Subnet%20Mask%20Calculate%20%26%20Subnetting/source/end.png"></p> 
 
 
 **_by wasny0ps_**
