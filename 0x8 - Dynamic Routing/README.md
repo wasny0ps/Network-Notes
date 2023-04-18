@@ -6,7 +6,7 @@ Dynamic routing is when protocols, called routing protocols, are used to build t
 
 ## Routing Information Protocol (RIP)
 
-<img margin="center" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/rip.png">
+<p align="center"<img margin="center" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/rip.png"></p>
 
 RIP is a dynamic routing protocol that uses **hop count as a routing metric** to find the best path between the source and the destination network. It is a **distance-vector routing protocol that has an AD value of 120** and works on the Network layer of the OSI model.
 
