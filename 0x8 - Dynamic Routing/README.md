@@ -32,3 +32,8 @@ As time progressed, the class structure of the network could not meet the need a
 
 - **RIP v1 is known as Classful Routing Protocol because it doesn’t send information of subnet mask in its routing update**. 
 - **RIP v2 is known as Classless Routing Protocol because it sends information of subnet mask in its routing update**. 
+
+
+## Open Shortest Path First (OSPF)
+
+It is a protocol developed by IETF (Internet Engineering Task Force) to improve and correct some deficiencies in the RIP protocol. Unlike RIP, OSPF was designed as a Link-state protocol. Link-state routing protocols can see the entire topology as well as send a Triggered update on network images. Accordingly, after the samples reach the information of all the routes between two points in the network, they decide which route is the best by using SPF (Shortest Path First) examinations. Also known as Link-state Refresh, it sends updates every 30 minutes.
