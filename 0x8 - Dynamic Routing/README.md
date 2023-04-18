@@ -21,7 +21,7 @@ Hop count is the **number of routers occurring in between the source and destina
 
 ## RIP Versions
 
-There are three versions of routing information protocol: RIP Version1, RIP Version2, and RIPng. 
+As time progressed, the class structure of the network could not meet the need and the subnet system was started. For this reason, three versions of routing information protocol were born: RIP Version1, RIP Version2, and RIPng. 
 
 |RIPv1|RIPv2|RIPng|
 |-|-|-|
@@ -30,5 +30,5 @@ There are three versions of routing information protocol: RIP Version1, RIP Vers
 |Doesn’t support authentication of updated messages|Supports authentication of RIPv2 update messages|-|
 |Classful routing protocol|Classless protocol updated supports classful|Classless updates are sent|
 
-- RIP v1 is known as Classful Routing Protocol because it doesn’t send information of subnet mask in its routing update. 
-- RIP v2 is known as Classless Routing Protocol because it sends information of subnet mask in its routing update. 
+- **RIP v1 is known as Classful Routing Protocol because it doesn’t send information of subnet mask in its routing update**. 
+- **RIP v2 is known as Classless Routing Protocol because it sends information of subnet mask in its routing update**. 
