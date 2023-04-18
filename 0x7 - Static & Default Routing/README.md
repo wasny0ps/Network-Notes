@@ -66,9 +66,7 @@ Default routing can be considered a special type of static routing. The differen
 Default routes are useful when dealing with a network with a single exit point. It is also useful when a bulk of destination networks have to be routed to a single next-hop device. When adding a default route, you should ensure that the next-hop device can route the packet further, or else the next hop device will drop the packet. Another point to remember is that when a more specific route to a destination exists in the routing table, the router will use that route and not the default route. The only time the router will use the default route is when a specific route does not exist.
 
 
-## Dynamic Routing
 
-Dynamic routing is when protocols, called routing protocols, are used to build the routing tables across the network. Using a routing protocol is easier than static routing and default routing, but it is more expensive in terms of CPU and bandwidth usage. Every routing protocol defines its own rules for communication between routers and selecting the best route.
 
 
 **_by wasny0ps_**
