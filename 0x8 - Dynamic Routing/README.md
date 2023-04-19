@@ -166,6 +166,52 @@ LSA packets are started to be sent according to the responses to the **Hello pac
 
 ## OSPF Configration
 
+Here is my uncured topology look like. Let's configrate!
+
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/ospf_topology.png"></p>
+
+Assign IPs into router's interfaces.
+- Router0:
+
+```
+R0(config)#interface gigabitEthernet 0/0/0
+R0(config-if)#ip ad 192.168.1.1 255.255.255.192
+R0(config-if)#no shut
+R0(config-if)#ex
+R0(config)#interface se0/1/0
+R0(config-if)#ip ad 85.0.0.1 255.0.0.0
+R0(config-if)#no shut
+```
+- Router1:
+
+```
+R1(config)#interface gigabitEthernet 0/0/0
+R1(config-if)#ip ad 192.168.1.65 255.255.255.192
+R1(config-if)#no shut
+R1(config-if)#ex
+R1(config)#interface se0/1/0
+R1(config-if)#ip ad 86.0.0.1 255.0.0.0
+R1(config-if)#no shut
+R1(config-if)#ex
+R1(config)#interface se0/1/1
+R1(config-if)#ip ad 85.0.0.2 255.0.0.0
+R1(config-if)#no shut
+```
+
+- Router2:
+
+```
+R2(config)#interface gigabitEthernet 0/0/0
+R2(config-if)#ip ad 192.168.1.129 255.255.255.192
+R2(config-if)#no shut
+R2(config-if)#ex
+R2(config)#in
+R2(config)#interface se0/1/1
+R2(config-if)#ip ad 86.0.0.2 255.0.0.0
+R2(config-if)#no shut
+
+```
+
 ## RIP vs OSPF
 
 
