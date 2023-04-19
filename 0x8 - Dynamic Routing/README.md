@@ -125,7 +125,7 @@ R       192.168.1.128/26 [120/1] via 86.0.0.2, 00:00:05, Serial0/1/0
 
 ```
 
-You can download this example [here](https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/ospf.png).
+You can download this example [here](https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/RIP.pkt).
 
 ## Open Shortest Path First (OSPF)
 
