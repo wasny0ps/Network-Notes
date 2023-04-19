@@ -83,7 +83,7 @@ R2(config-if)#no shut
 
 ```
 
-After assigning IP addresses, we must set the RIP protocol. In this step, you should enter the networks which are directly connected to router's interfaces.
+After assigning IP addresses, we must set the RIP protocol. In this step, you should enter the networks which are directly connected to router's interfaces use for introducing network to other routers. Also, in this example, the network has classful structure because of the subnetting. Thats's why, we use `version 2` command. What is more, if you wonder about why we use `no auto-summary` command, you may draw on this [link](https://community.cisco.com/t5/switching/what-is-the-use-of-no-auto-summary-command/td-p/1340409).
 
 - Router0:
 ```
@@ -115,6 +115,17 @@ R2(config-router)#version 2
 R2(config-router)#no auto-summary 
 ```
 
+And, you can check your configration like this command.
+
+```
+R1#show ip route rip 
+     192.168.1.0/24 is variably subnetted, 4 subnets, 2 masks
+R       192.168.1.0/26 [120/1] via 85.0.0.1, 00:00:06, Serial0/1/1
+R       192.168.1.128/26 [120/1] via 86.0.0.2, 00:00:05, Serial0/1/0
+
+```
+
+You can download this example [here](https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/ospf.png).
 
 ## Open Shortest Path First (OSPF)
 
