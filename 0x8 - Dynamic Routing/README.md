@@ -37,6 +37,9 @@ As time progressed, the class structure of the network could not meet the need a
 
 ## RIP Configration
 
+<p align="center"><img width="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/rip_topology.png"></p>
+
+
 ## Open Shortest Path First (OSPF)
 
 <p align="center"><img width="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/ospf.png"></p>
