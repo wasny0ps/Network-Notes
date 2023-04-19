@@ -43,8 +43,8 @@ Here is my uncured topology look like. Let's configrate!
 
 - Assign IPs into router's interfaces. Here is Router0's example.
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/assign_ip.png"></p>
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/serial_assign_ip.png"></p>
+<p><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/assign_ip.png"></p>
+<p><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/serial_assign_ip.png"></p>
 
 
 
