@@ -41,11 +41,79 @@ Here is my uncured topology look like. Let's configrate!
 
 <p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/rip_topology.png"></p>
 
-- Assign IPs into router's interfaces. Here is Router0's example.
+Assign IPs into router's interfaces.
+- Router0:
 
-<p><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/assign_ip.png"></p>
-<p><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/serial_assign_ip.png"></p>
+```
+R0(config)#interface gigabitEthernet 0/0/0
+R0(config-if)#ip ad 192.168.1.1 255.255.255.192
+R0(config-if)#no shut
+R0(config-if)#ex
+R0(config)#interface se0/1/0
+R0(config-if)#ip ad 85.0.0.1 255.0.0.0
+R0(config-if)#no shut
+```
+- Router1:
 
+```
+R1(config)#interface gigabitEthernet 0/0/0
+R1(config-if)#ip ad 192.168.1.65 255.255.255.192
+R1(config-if)#no shut
+R1(config-if)#ex
+R1(config)#interface se0/1/0
+R1(config-if)#ip ad 86.0.0.1 255.0.0.0
+R1(config-if)#no shut
+R1(config-if)#ex
+R1(config)#interface se0/1/1
+R1(config-if)#ip ad 85.0.0.2 255.0.0.0
+R1(config-if)#no shut
+```
+
+- Router2:
+
+```
+R2(config)#interface gigabitEthernet 0/0/0
+R2(config-if)#ip ad 192.168.1.129 255.255.255.192
+R2(config-if)#no shut
+R2(config-if)#ex
+R2(config)#in
+R2(config)#interface se0/1/1
+R2(config-if)#ip ad 86.0.0.2 255.0.0.0
+R2(config-if)#no shut
+
+```
+
+After assigning IP addresses, we must set the RIP protocol. In this step, you should enter the networks which are directly connected to router's interfaces.
+
+- Router0:
+```
+R0(config)#router rip
+R0(config-router)#network 192.168.1.0
+R0(config-router)#network 85.0.0.0
+R0(config-router)#version 2
+R0(config-router)#no auto-summary 
+```
+
+- Router1:
+
+```
+R1(config)#router rip
+R1(config-router)#network 192.168.1.64
+R1(config-router)#network 85.0.0.0
+R1(config-router)#network 86.0.0.0
+R1(config-router)#version 2
+R1(config-router)#no auto-summary 
+```
+
+- Router2:
+
+```
+R2(config)#router rip
+R2(config-router)#network 192.168.1.128
+R2(config-router)#network 86.0.0.0
+R2(config-router)#version 2
+R2(config-router)#no auto-summary 
+```
 
 
 ## Open Shortest Path First (OSPF)
