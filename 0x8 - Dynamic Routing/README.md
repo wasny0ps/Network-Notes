@@ -89,3 +89,6 @@ LSA packets are started to be sent according to the responses to the **Hello pac
 |In RIP, the whole routing table is to be broadcasted to the neighbors every 30 seconds by the routers|In OSPF, parts of the routing table are only sent when a change has been made to it|
 |RIP utilizes less memory compared to OSPF but is CPU intensive like OSPF|OSPF device resource requirements are CPU intensive and memory|
 |Its multicast address is 224.0.0.9|OSPF’s multicast addresses are 224.0.0.5 and 224.0.0.6|
+
+
+**_by wasny0ps_**
