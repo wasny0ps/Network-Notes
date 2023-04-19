@@ -59,3 +59,33 @@ The OSPF protocol does not use metrics like distance vector protocols. So **ther
 
 OSPF generates an update packet whenever there is a change in the network. **When the state of a link changes, the router that detects it broadcasts a packet called LSA** (Link-State Advertisement). The LSA packet is forwarded to all neighbors. **Each router device receives a copy of the LSA, updates the LSDB (Link-State Database) and forwards the LSA to neighboring routers**. Thanks to this LSA sent, the whole network detects the change in the network and reflects it to the new topology. **LSDB is used to calculate the best path to the destination network**.
 
+There are **3 types of tables in OSPF**. These are **Neighborhood Table**, **Topology Table** and **Routing Table**.
+
+- The neighborhood table keeps a list of the router's neighbors.
+- The topology table is known as LSDB. All routers and their connections in the network are kept. LSAs are included in this table, and most importantly, the LSDB of each router in the network must be identical.
+- The routing table is also called the routing database. The information of the shortest paths to the destination networks is kept in this table.
+
+
+In Multi-Access networks, a router called **DR (Designated Router) is selected that will manage all the traffic in the environment and provide communication**. In addition, a **backup router called BDR (Backup Designated Router) is selected as a backup of the DR**. DR and BDR selections are made with Router IDs. **Router ID is the highest IP address on a router's active interfaces**. However, if any loopback address is defined in this network, the ID of that router is the loopback IP.
+
+
+LSA packets are started to be sent according to the responses to the **Hello packets** in the OSPF protocol. LSA packets contain routers' connections, interfaces and line status information. **Each router that exchanges LSA packets has its own LSA table, and this created LSA table is sent to other routers, creating a database where all routers in the network learn each other's LSA table**. Thanks to this created database, the route information and distance in the network are calculated. With the help of the SPF algorithm, the network topology is extracted and this process is performed again **every 30 minutes**. If there is no change on the network, no updates are made and no traffic is generated on the network, except for Hello packets.
+
+
+
+## RIP vs OSPF
+
+
+|RIP|OSPF|
+|-|-|
+|RIP works on the Bellman-Ford algorithm|OSPF works on Dijkstra algorithm|
+|It is a Distance Vector protocol and it uses the distance or hops count to determine the transmission path|It is a link-state protocol and it analyzes different sources like the speed, cost and path congestion while identifying the shortest path|
+|It is used for smaller size organizations|It is used for larger size organizations in the network|
+|It allows a maximum of 15 hops|There is no such restriction on the hop count|
+|It is not a more intelligent dynamic routing protocol|It is a more intelligent routing protocol than RIP|
+|Its administrative distance is 120|Its administrative distance is 110|
+|RIP uses UDP Protocol|OSPF works for IP Protocol|
+|It calculates the metric in terms of Hop Count|It calculates the metric in terms of bandwidth|
+|In RIP, the whole routing table is to be broadcasted to the neighbors every 30 seconds by the routers|In OSPF, parts of the routing table are only sent when a change has been made to it|
+|RIP utilizes less memory compared to OSPF but is CPU intensive like OSPF|OSPF device resource requirements are CPU intensive and memory|
+|Its multicast address is 224.0.0.9|OSPF’s multicast addresses are 224.0.0.5 and 224.0.0.6|
