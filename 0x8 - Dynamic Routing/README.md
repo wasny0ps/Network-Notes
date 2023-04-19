@@ -6,7 +6,7 @@ Dynamic routing is when protocols, called routing protocols, are used to build t
 
 ## Routing Information Protocol (RIP)
 
-<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/rip.png"></p>
+<p align="center"><img width="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/rip.png"></p>
 
 RIP is a dynamic routing protocol that uses **hop count as a routing metric** to find the best path between the source and the destination network. It is a **distance-vector routing protocol that has an AD value of 120** and works on the Network layer of the OSI model.
 
@@ -38,7 +38,7 @@ As time progressed, the class structure of the network could not meet the need a
 
 ## Open Shortest Path First (OSPF)
 
-<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/ospf.png"></p>
+<p align="center"><img width="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/ospf.png"></p>
 
 
 It is a protocol developed by IETF (Internet Engineering Task Force) to improve and correct some deficiencies in the RIP protocol. **Unlike RIP, OSPF was designed as a Link-state protocol**. **Link-state routing protocols can see the entire topology as well as send a Triggered update on network images**. Accordingly, after the samples reach the information of all the routes between two points in the network, they **decide which route is the best by using SPF (Shortest Path First) examinations**. **Also known as Link-state Refresh, it sends updates every 30 minutes**.
@@ -55,6 +55,7 @@ The OSPF protocol does not use metrics like distance vector protocols. So **ther
 
 ### OSPF Working Structure
 
+<p align="center"><img width="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/ospf_structure.png"></p>
+
 OSPF generates an update packet whenever there is a change in the network. **When the state of a link changes, the router that detects it broadcasts a packet called LSA** (Link-State Advertisement). The LSA packet is forwarded to all neighbors. **Each router device receives a copy of the LSA, updates the LSDB (Link-State Database) and forwards the LSA to neighboring routers**. Thanks to this LSA sent, the whole network detects the change in the network and reflects it to the new topology. **LSDB is used to calculate the best path to the destination network**.
 
-<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/ospf_structure.png"></p>
