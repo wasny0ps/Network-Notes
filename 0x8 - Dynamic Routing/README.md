@@ -44,3 +44,17 @@ As time progressed, the class structure of the network could not meet the need a
 It is a protocol developed by IETF (Internet Engineering Task Force) to improve and correct some deficiencies in the RIP protocol. **Unlike RIP, OSPF was designed as a Link-state protocol**. **Link-state routing protocols can see the entire topology as well as send a Triggered update on network images**. Accordingly, after the samples reach the information of all the routes between two points in the network, they **decide which route is the best by using SPF (Shortest Path First) examinations**. **Also known as Link-state Refresh, it sends updates every 30 minutes**.
 
 The most important feature of the OSPF protocol that makes it different from other protocols is that it is a **line status protocol**. Accordingly, OSPF is very successful in **learning path information quickly**, **working better in large and complex networks**, and **reliability**. In addition, OSPF has other features besides these important features.
+
+- It provides **more effective addressing** because it supports **VLSM (Variable Length Subnet Masking)** and **Supernetting**.
+- It has **classless structure**.
+- It ensures that the load received on the network is shared equally on the servers (**Load Balancing**). Thus, performance gain is achieved.
+- The **AD (Administrative Distance) value is 110**.
+- The Area value is important in the OSPF protocol. In large networks, **the size of the routing table and the complexity of the network can be reduced by dividing it into zones**.
+
+The OSPF protocol does not use metrics like distance vector protocols. So **there is no limit on the number of digits**. It uses values that are inversely proportional to the **bandwidth** in the metric calculation. **The best route is the lowest cost route**, and the best routes are included in the routing table.
+
+### OSPF Working Structure
+
+OSPF generates an update packet whenever there is a change in the network. **When the state of a link changes, the router that detects it broadcasts a packet called LSA** (Link-State Advertisement). The LSA packet is forwarded to all neighbors. **Each router device receives a copy of the LSA, updates the LSDB (Link-State Database) and forwards the LSA to neighboring routers**. Thanks to this LSA sent, the whole network detects the change in the network and reflects it to the new topology. **LSDB is used to calculate the best path to the destination network**.
+
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/ospf_structure.png"></p>
