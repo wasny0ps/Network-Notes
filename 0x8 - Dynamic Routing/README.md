@@ -35,6 +35,7 @@ As time progressed, the class structure of the network could not meet the need a
 - **RIP v1 is known as Classful Routing Protocol because it doesn’t send information of subnet mask in its routing update**. 
 - **RIP v2 is known as Classless Routing Protocol because it sends information of subnet mask in its routing update**. 
 
+## RIP Configration
 
 ## Open Shortest Path First (OSPF)
 
@@ -71,7 +72,7 @@ In Multi-Access networks, a router called **DR (Designated Router) is selected t
 
 LSA packets are started to be sent according to the responses to the **Hello packets** in the OSPF protocol. LSA packets contain routers' connections, interfaces and line status information. **Each router that exchanges LSA packets has its own LSA table, and this created LSA table is sent to other routers, creating a database where all routers in the network learn each other's LSA table**. Thanks to this created database, the route information and distance in the network are calculated. With the help of the SPF algorithm, the network topology is extracted and this process is performed again **every 30 minutes**. If there is no change on the network, no updates are made and no traffic is generated on the network, except for Hello packets.
 
-
+## OSPF Configration
 
 ## RIP vs OSPF
 
