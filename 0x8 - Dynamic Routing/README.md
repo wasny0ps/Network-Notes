@@ -168,7 +168,7 @@ LSA packets are started to be sent according to the responses to the **Hello pac
 
 Here is my uncured topology look like. Let's configrate!
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/ospf_topology.png"></p>
+<p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/ospf_topology.png"></p>
 
 Assign IPs into router's interfaces.
 - Router0:
@@ -214,11 +214,11 @@ R2(config-if)#ip ad 87.0.0.10 255.0.0.0
 R2(config-if)#no shut
 ```
 
-After assigning IP addresses, we must set the OSPF protocol. In this step, you should enter the networks which are directly connected to router's interfaces use for introducing network to other routers. Also, when we introduce networks, we **must enter network's wilcard address and area number for OSPF easily calculate best route**. Shortly, wilcard address is a special local IP address and helps the router to only focus on the digits chosen by the mask rather than on the entire IP address.
+After assigning IP addresses, we must set the **OSPF protocol with process ID**. In this step, you should enter the networks which are directly connected to router's interfaces use for introducing network to other routers. Also, when we introduce networks, we **must enter network's wilcard address and area number for OSPF easily calculate best route**. Shortly, **wilcard address is a special local IP address and helps the router to only focus on the digits chosen by the mask rather than on the entire IP address**.
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/wilcard_address.png"></p>
+<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/wilcard_address.png"></p>
 
-
+In the Router0 and Router2, we are will execute `passive-interface` command used for to **suppress OSPF hello packets** on a specified interface.
 
 - Router0:
 
@@ -247,6 +247,37 @@ R2(config-router)#network 86.0.0.0 0.0.0.255 area 0
 R2(config-router)#network 87.0.0.0 0.0.0.255 area 0
 R2(config-router)#passive-interface gigabitEthernet 0/0/0
 ```
+
+And, you can check your configration like this command.
+
+```
+R0#show ip ospf 
+ Routing Process "ospf 10" with ID 192.168.10.1
+ Supports only single TOS(TOS0) routes
+ Supports opaque LSA
+ SPF schedule delay 5 secs, Hold time between two SPFs 10 secs
+ Minimum LSA interval 5 secs. Minimum LSA arrival 1 secs
+ Number of external LSA 0. Checksum Sum 0x000000
+ Number of opaque AS LSA 0. Checksum Sum 0x000000
+ Number of DCbitless external and opaque AS LSA 0
+ Number of DoNotAge external and opaque AS LSA 0
+ Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+ External flood list length 0
+    Area BACKBONE(0)
+        Number of interfaces in this area is 3
+        Area has no authentication
+        SPF algorithm executed 7 times
+        Area ranges are
+        Number of LSA 3. Checksum Sum 0x01d907
+        Number of opaque link LSA 0. Checksum Sum 0x000000
+        Number of DCbitless LSA 0
+        Number of indication LSA 0
+        Number of DoNotAge LSA 0
+        Flood list length 0
+```
+
+You can download this example [here](https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/OSPF.pkt).
+
 
 ## RIP vs OSPF
 
