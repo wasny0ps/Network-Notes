@@ -174,42 +174,78 @@ Assign IPs into router's interfaces.
 - Router0:
 
 ```
-R0(config)#interface gigabitEthernet 0/0/0
-R0(config-if)#ip ad 192.168.1.1 255.255.255.192
+R0(config)#interface gi0/0/0
+R0(config-if)#ip ad 192.168.10.1 255.255.255.128
 R0(config-if)#no shut
 R0(config-if)#ex
-R0(config)#interface se0/1/0
-R0(config-if)#ip ad 85.0.0.1 255.0.0.0
+R0(config)#int se0/1/0
+R0(config-if)#ip ad 85.0.0.10 255.0.0.0
+R0(config-if)#no shut
+R0(config-if)#ex
+R0(config)#int se0/1/1
+R0(config-if)#ip ad 87.0.0.12 255.0.0.0
 R0(config-if)#no shut
 ```
 - Router1:
 
 ```
-R1(config)#interface gigabitEthernet 0/0/0
-R1(config-if)#ip ad 192.168.1.65 255.255.255.192
+R1(config)#int se0/1/0
+R1(config-if)#ip ad 85.0.0.11 255.0.0.0
 R1(config-if)#no shut
 R1(config-if)#ex
-R1(config)#interface se0/1/0
-R1(config-if)#ip ad 86.0.0.1 255.0.0.0
-R1(config-if)#no shut
-R1(config-if)#ex
-R1(config)#interface se0/1/1
-R1(config-if)#ip ad 85.0.0.2 255.0.0.0
+R1(config)#int se0/1/1
+R1(config-if)#ip ad 86.0.0.11 255.0.0.0
 R1(config-if)#no shut
 ```
 
 - Router2:
 
 ```
-R2(config)#interface gigabitEthernet 0/0/0
-R2(config-if)#ip ad 192.168.1.129 255.255.255.192
+R2(config)#int gi0/0/0
+R2(config-if)#ip ad 192.168.12.1 255.255.255.128
 R2(config-if)#no shut
 R2(config-if)#ex
-R2(config)#in
-R2(config)#interface se0/1/1
-R2(config-if)#ip ad 86.0.0.2 255.0.0.0
+R2(config)#int se0/1/0
+R2(config-if)#ip ad 86.0.0.12 255.0.0.0
 R2(config-if)#no shut
+R2(config-if)#ex
+R2(config)#int se0/1/1
+R2(config-if)#ip ad 87.0.0.10 255.0.0.0
+R2(config-if)#no shut
+```
 
+After assigning IP addresses, we must set the OSPF protocol. In this step, you should enter the networks which are directly connected to router's interfaces use for introducing network to other routers. Also, when we introduce networks, we **must enter network's wilcard address and area number for OSPF easily calculate best route**. Shortly, wilcard address is a special local IP address and helps the router to only focus on the digits chosen by the mask rather than on the entire IP address.
+
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x8%20-%20Dynamic%20Routing/src/wilcard_address.png"></p>
+
+
+
+- Router0:
+
+```
+R0(config)#router ospf 10
+R0(config-router)#network 192.168.10.1 0.0.0.127 area 0
+R0(config-router)#network 85.0.0.0 0.0.0.255 area 0
+R0(config-router)#network 87.0.0.0 0.0.0.255 area 0
+R0(config-router)#passive-interface gi0/0/0
+```
+
+- Router1:
+
+```
+R1(config)#router ospf 10
+R1(config-router)#network 85.0.0.0 0.0.0.255 area 0
+R1(config-router)#network 86.0.0.0 0.0.0.255 area 0
+```
+
+- Router2:
+
+```
+R2(config)#router ospf 10
+R2(config-router)#network 192.168.12.0 0.0.0.127 area 0
+R2(config-router)#network 86.0.0.0 0.0.0.255 area 0
+R2(config-router)#network 87.0.0.0 0.0.0.255 area 0
+R2(config-router)#passive-interface gigabitEthernet 0/0/0
 ```
 
 ## RIP vs OSPF
