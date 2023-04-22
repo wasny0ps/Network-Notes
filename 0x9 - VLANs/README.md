@@ -297,6 +297,65 @@ SW#vtp pruning enable
 
 <p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/etherchannel.png"></p>
 
+Etherchannel is a **link aggregation technology** used in switchers. Negotiations required for link aggregation are dynamically provided by protocols. **Multiple ports can be represented as a single port with Etherchannel technology used to increase bandwidth**. It is possible to combine up to 8 ports using this technology. Etherchannel technology physically has more than one port, but logically there is only one port. Normally, if more than one port is used between switchers, a loop occurs, but STP (Spanning Tree Protocol) prevents this loop formation. With this technology, the ports will logically appear as a single port, so **STP will not do any blocking**.
+
+**Etherchannel provides redundancy**. Redundancy is the continuation of transmission over other connections in case one of the connections fails. **One of the important points to note is that the ports are set at equal speeds, and another is that the combined ports are in the same virtual local area network**. If the ports are used as trunks, they must have the same native vlane. **Packets are forwarded from a specific port as a result of the hash algorithm used**. Algorithm, source mac address, destination mac address or both; It can use source ip address, destination ip address, or both, or tcp/udp port numbers. **The most important aspect of technology is that it increases bandwidth**. Bandwidth can go up to 800 Mbit/s, 8 Gbit/s or 80 Gbit/s with the use of maximum 8 active ports.
+
+In Etherchannel, switchers can enable link configurations to be done dynamically. Two protocols are used for this: **PAgP (Port Aggregation Protocol)** and **LACP (Link Aggregation Control Protocol)**. PagP is a Cisco device-specific protocol, while LACP is a device-independent standard protocol.
+
+### Etherchannel Configration
+
+Here is my sweat topology.
+
+<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/etherchannel_topology.png"></p>
 
 
- 
+- For PAgP
+```
+S0(config)#interface range fastEthernet 0/3
+S0(config-if-range)#duplex full
+S0(config-if-range)#speed 100
+S0(config-if-range)#channel-group 1 mode desirable
+S0(config-if-range)#ex
+S0(config)#int port-channel 1
+S0(config-if)#switchport mode trunk
+S0(config-if)#switchport trunk allowed vlan 2,99
+```
+```
+S1(config)#interface range fastEthernet 0/3
+S1(config-if-range)#duplex full
+S1(config-if-range)#speed 100
+S1(config-if-range)#channel-group 1 mode desirable
+S1(config-if-range)#ex
+S1(config)#int port-channel 1
+S1(config-if)#switchport mode trunk
+S1(config-if)#switchport trunk allowed vlan 2,99
+```
+
+- For LACP
+
+```
+S0(config)#interface range fastEthernet 0/3
+S0(config-if-range)#duplex full
+S0(config-if-range)#speed 100
+S0(config-if-range)#channel-group 1 mode active
+S0(config-if-range)#ex
+S0(config)#int port-channel 1
+S0(config-if)#switchport mode trunk
+S0(config-if)#switchport trunk allowed vlan 2,99
+```
+```
+S1(config)#interface range fastEthernet 0/3
+S1(config-if-range)#duplex full
+S1(config-if-range)#speed 100
+S1(config-if-range)#channel-group 1 mode active
+S1(config-if-range)#ex
+S1(config)#int port-channel 1
+S1(config-if)#switchport mode trunk
+S1(config-if)#switchport trunk allowed vlan 2,99
+```
+
+You can access this topology from [here](https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/Etherchannel.pkt).
+
+
+**_by wasny0ps_**
