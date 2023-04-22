@@ -92,7 +92,7 @@ Each physical interface of the router is assigned to a different VLAN and the ro
 
 Here is my IPless legacy Inter VLAN topology. Let's assign IP to devices.
 
-<p align="center"><img width="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/legacy_inter_vlan_topology.png"></p>
+<p align="center"><img width="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/LIV_topology.png"></p>
 
 In this step, create VLANs and configure it with correct topology informations. If you don't how to configure, please look at [here](https://github.com/wasny0ps/Network-Notes/edit/main/0x9%20-%20VLANs/README.md#vlan-configration). If you do it correctly, you must see kind of this result when you testing ping devices which are in the same vlan.
 
