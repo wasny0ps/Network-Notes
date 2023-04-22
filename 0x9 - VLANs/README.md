@@ -96,9 +96,7 @@ Here is my IPless legacy Inter VLAN topology. Let's assign IP to devices.
 
 In this step, create VLANs and configure it with correct topology informations. If you don't how to configure, please look at [here](https://github.com/wasny0ps/Network-Notes/edit/main/0x9%20-%20VLANs/README.md#vlan-configration). If you do it correctly, you must see kind of this result when you testing ping devices which are in the same vlan.
 
-<p align="center"><img width="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/check_w_ping.png"></p>
-
-And then, enter the router port's interface which is connected to switch and assign .
+<p align="center"><img width="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/ping.png"></p>
 
 ## Router On Stick
 ## Layer3 Switch Inter-VLAN Routing
