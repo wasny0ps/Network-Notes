@@ -177,10 +177,56 @@ A switch is a device that typically operates at layer 2 of the OSI model. It ins
 
 ### Layer3 Switch Inter-VLAN Routing Configration
 
-Here my topology.
+Here my starting topology. Let's assign IP address to user devices and do VLAN configration.
 
-<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/layer%203%20switch_inter_vlan_topology.png"></p>
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/layer%203%20switch_inter_vlan_topology.png"></p>
 
+After completed previous step, configure trunk protocol with switch-switch and switch-router.
+
+```
+S0(config)#interface fastEthernet 0/20
+S0(config-if)#switchport mode trunk 
+```
+```
+S1(config)#interface fastEthernet 0/20
+S1(config-if)#switchport mode trunk
+S1(config-if)#ex
+S1(config)#interface fastEthernet 0/21
+S1(config-if)#switchport mode trunk
+S1(config-if)#ex
+S1(config)#interface fastEthernet 0/24
+S1(config-if)#switchport mode trunk
+```
+```
+S2(config)#interface fastEthernet 0/21
+S2(config-if)#switchport mode trunk 
+```
+
+The last thing to do is execute `ip routing` command in the multi layer switch for work on layer 3. After that create same VLAN and assign IP address into the VLAN's interface.
+
+```
+MLSW(config)#ip routing
+MLSW(config)#vlan 10
+MLSW(config-vlan)#name DEVS
+MLSW(config-vlan)#vlan 20
+MLSW(config-vlan)#name CYBR
+MLSW(config-vlan)#vlan 30
+MLSW(config-vlan)#name LMRS
+MLSW(config-vlan)#ex
+MLSW(config)#int vlan 10
+MLSW(config-if)#ip add 192.168.10.1 255.255.255.0
+MLSW(config-if)#no shut
+MLSW(config-if)#ex
+MLSW(config)#int vlan 20
+MLSW(config-if)#ip add 192.168.20.1 255.255.255.0
+MLSW(config-if)#no shut
+MLSW(config-if)#ex
+MLSW(config)#int vlan 30
+MLSW(config-if)#ip add 192.168.30.1 255.255.255.0
+MLSW(config-if)#no shut
+```
+
+You can access this topology [here]().
 
 ## STP
 ## DTP
