@@ -94,7 +94,7 @@ Here is my IPless legacy Inter VLAN topology. Let's assign IP to devices.
 
 <p align="center"><img width="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/LIV_topology.png"></p>
 
-In this step, create VLANs and configure it with correct topology informations. If you don't how to configure, please look at [here](https://github.com/wasny0ps/Network-Notes/edit/main/0x9%20-%20VLANs/README.md#vlan-configration). If you do it correctly, you must see kind of this result when you testing ping devices. You can access this topology [here]().
+In this step, create VLANs and configure it with correct topology informations. If you don't how to configure, please look at [here](https://github.com/wasny0ps/Network-Notes/edit/main/0x9%20-%20VLANs/README.md#vlan-configration). If you do it correctly, you must see kind of this result when you testing ping devices. You can access this topology [here](https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/Legacy_Inter-VLAN_Routing.pkt).
 
 <p align="center"><img width="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/ping.png"></p>
 
