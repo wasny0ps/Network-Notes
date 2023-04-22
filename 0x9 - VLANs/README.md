@@ -269,13 +269,33 @@ Dynamic Trunking Protocol is a network protocol that runs at the "Data Link" lay
 <p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/DTP.png"></p>
 
 
+While don't execute `switchport nonegotiate` command, DTP always works in switch.
+
 
 ## VLAN Trunking Protocol (VTP)
 
+VTP is a VLAN in networks with a large number of switches. VTP can in a sense also call it VLAN Domain. Various powers such as adding, deleting, renaming are given to the VTP network administrator on VLANs, and new information is reported to other switchers on the network thanks to VTP.
 
+Again thanks to VTP, **centralized management can be provided in networks with more than one switcher**. **It saves the trouble of configuring all switchers separately in changes such as adding, deleting, renaming VLANs in the managed network and the errors that may occur during configuration**. Necessary changes are made on a single switcher and the changes made to other switchers are taught through trunk ports thanks to VTP.
+
+**The concept of Domain is important** in VTP. A VTP area is created in a network where VLANs are requested to be taught with VTP. Switchers in the same domain exchange **VTP packets**, they do not exchange VTP packets with switchers in different **VTP domains**. The VTP Domain Name is entered in the switcher to create the domain. **The VTP domain name basically comes as NULL**. Switchers with the same VTP domain are in the same domain. Also, optionally, **VTP Password** can be entered for security purposes. Switchers in the same domain must enter the same password, otherwise the switchers will not be able to exchange VTP packets.
+
+VTP; It can run in 3 different modes: **Server**, **Client** and **Transparent**.
+- **Server**: It is the mode that has the authority to make all **changes on VLANs**, **sends the change information** it makes, receives information and updates. In every VTP domain, at least a switcher operating in VTP server mode is needed for adding and configuring VLANs. **Every change made in this mode is also announced to that VTP domain and taught to other switchers in the domain**. **These configurations are stored on NVRAM (Non-Volatile RAM)**.
+- **Client**: They are switchers that can receive, update and send information from VTP servers, but **do not have the authority to make any changes on VLANs**. **The configuration for this mode is not stored in NVRAM, they are temporary**.
+- **Transparent**: The switcher operating in this mode is actually like a server, VLANs can be created, deleted or changed over it. These actions **only affect the VLAN database of this switcher**, **changes made here cannot be transferred to other switchers**. In addition, it sends the information it receives from other switchers over trunk ports to other switchers from trunk ports, but does not use the information it receives and does not update its own VLAN database with this information. **The configuration for this mode is stored in NVRAM**.
+
+### VTP Pruning
+
+If pruning is enabled in a domain, broadcast traffic related to that VLAN will not flow to a switcher that does not have an active port for a VLAN. VTP pruning; **It provides bandwidth by preventing packets belonging to those VLANs from being sent to the device with unused VLANs**. For VTP pruning to work, it must be implemented on all switchers **in the same domain**. This feature cannot be activated in client mode. It is activated in Server mode and taught to other devices. VTP pruning is disabled on a first-time device and you can active at it this command.
+
+```
+SW#vtp pruning enable
+```
 
 ## Etherchannel
 
+<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/etherchannel.png"></p>
 
 
 
