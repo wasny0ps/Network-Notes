@@ -20,6 +20,11 @@ VLANs (Virtual LANs) are logical grouping of devices in the same broadcast domai
 
 ## VLAN Configration
 
+Before VLAN configure in the switch, you must **connect devices to switch correct ports**. Here is my clear topology.
+
+<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/vlan.png"></p>
+
+
 # VLAN Routing
 
 VLAN is the logical grouping of devices in the same or different broadcast domains. By default, all the switch ports are in VLAN 1. As the single broadcast domain is divided into multiple broadcast domains, Routers or layer 3 switches are used for intercommunication between the different VLANs.The process of intercommunication of the different Vlans is known as Inter Vlan Routing (IVR). Inter-VLAN routing is the ability to route, or send, traffic between VLANs that are normally blocked by default. Switches and VLANs work at the Data Link Layer (Layer 2). **Traffic can't be routed between VLANs at Layer 2 based on MAC addresses**.
