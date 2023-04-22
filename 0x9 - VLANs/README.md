@@ -164,10 +164,16 @@ R1(config-if-range)#ip add 192.168.20.1 255.255.255.0
 R1(config-if-range)#no shut
 ```
 
-You can access this topology [here]().
+You can access this topology [here](https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/Router_On_Stick.pkt).
 
 ## Layer3 Switch Inter-VLAN Routing
 
+<p align="center"><img width="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/router_on_stick.png"></p>
+
+
+A switch is a device that typically operates at layer 2 of the OSI model. It inspects frames and switches them between interfaces based on MAC addresses found in the Ethernet header. This type of device is referred to as just a switch or a Layer 2 switch. It does not look deeper than the Ethernet header and does not make any decisions based on information in the IP header. Routers on the other hand strip the Ethernet header of frames and look at the packet in the frame's payload. They make routing decisions based on the IP addresses found in the Layer 3 header and place a new Ethernet header before switching the frame out another interface. 
+
+**A multilayer switch** can perform both functions explained above at incredibly fast speeds. They can switch **frames as a regular switch and can perform IP routing as a router**. So therefore they can perform functions at layer 2 of the OSI model as well as at layer 3. That is why they are called **Multilayer Switches** or **Layer 3 switches**.
 
 ## STP
 ## DTP
