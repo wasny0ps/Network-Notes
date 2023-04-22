@@ -228,9 +228,52 @@ MLSW(config-if)#no shut
 
 You can access this topology [here](https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/MLSW_Inter-Vlan.pkt).
 
-## STP
-## DTP
-## VTP
+## Spanning Tree Protocol (STP)
+
+STP is a protocol used to **prevent loops that may occur between switchers in a network**. **STP selects a root bridge among switchers in a network where it is active and blocks ports that could cause looping between switchers**. In this way, STP eliminates the risk of physical loops in networks consisting of switchers. However, if sufficient attention is not paid to STP security, STP attacks may occur and endless loops may occur.
+The most known STP threats are; seizing the root bridge, changing the STP active topologies, changing the STP timers, constantly creating Topology Change Notification.
+
+[More about STP](https://content.cisco.com/chapter.sjs?uri=/searchable/chapter/content/en/us/td/docs/routers/nfvis/switch_command/b-nfvis-switch-command-reference/spanning_tree_commands.html.xml).
+
+### Portfast
+
+To enable the PortFast mode, use the spanning-tree portfast command in interface switch configuration mode. In PortFast mode, the interface is immediately put into the forwarding state upon linkup, without waiting for the standard forward time delay. To disable the PortFast mode, use the no form of this command.
+
+```
+SW(config-switch)# interface gigabitEthernet 1/1
+SW(config-switch-if)# spanning-tree portfast enable
+```
+
+### BPDU Protection
+
+Hackers can cause loops by connecting their switchers to ports that have portfast turned on. Because in ports where portfast is open, a while loop may occur as the port immediately switches to the transmission state.
+
+To prevent this situation, a feature called "BPDU Guard" has been developed. BPDU protection, when BPDU is received from ports where portfast is open, it performs the function of closing that port. Thus,** when the malicious person connects his switcher to the network, the port he connects to is automatically closed**.
+
+- Based on port
+```
+SW(config-switch)# interface gigabitEthernet 1/1
+SW(config-switch-if)# spanning-tree bpduguard enable 
+```
+
+- All ports includes 
+
+```
+SW(config)# spanning-tree portfast bpduguard default
+```
+
+## Dynamic Trunking Protocol (DTP)
+
+Dynamic Trunking Protocol is a network protocol that runs at the "Data Link" layer, the second of the OSI layers developed by Cisco. DTP, briefly, is a protocol that works between Cisco Switches (switchers) and allows two switchers to **make the port they are connected to a Trunk port with the DTP message they share between them**. Through the Dynamic Trunk Protocol, "trunking" between ports is done automatically. **There are 4 kinds of modes that can be applied to realize the Dynamic Trunk Protocol: "Switchports" can be Auto (automatic) or Desirable (desired) in terms of DTP**. Except for automatic and desired modes, "switchports" can be determined as static, access or trunk by the administrator. Dynamic Desirable (Dynamic Desirable) and Dynamic Auto (Dynamic auto) determine whether the port can automatically "trunk" and this determination is related to sending DTP packets along the line. These modes tend to be "trunk". The way these ports, which are desirable as standard, work when auto or desirable can be understood from the table below.
+
+<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/DTP.png"></p>
+
+
+
+## VLAN Trunking Protocol (VTP)
+
+
+
 ## Etherchannel
 
 
