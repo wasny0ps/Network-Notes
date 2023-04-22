@@ -22,9 +22,53 @@ VLANs (Virtual LANs) are logical grouping of devices in the same broadcast domai
 
 Before VLAN configure in the switch, you must **connect devices to switch correct ports**. Here is my clear topology.
 
-<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/vlan.png"></p>
+<p align="center"><img width="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/vlan.png"></p>
 
 
+Then, define the vlans with vlan's ID and assign it's name. After that, turn on port status is "active" for each vlan's ports.
+
+```
+SW1(config)#vlan 10
+SW1(config-vlan)#name Developers
+SW1(config-vlan)#vlan 20
+SW1(config-vlan)#name Pentesters
+SW1(config-vlan)#vlan 30
+SW1(config-vlan)#name Servers
+SW1(config-vlan)#ex
+SW1(config)#int range fa0/1-5
+SW1(config-if-range)#switchport mode access
+SW1(config-if-range)#switchport access vlan 10
+SW1(config-vlan)#ex
+SW1(config)#int range fa0/6-10
+SW1(config-if-range)#switchport mode access
+SW1(config-if-range)#switchport access vlan 20
+SW1(config-vlan)#ex
+SW1(config)#int range fa0/11-15
+SW1(config-if-range)#switchport mode access
+SW1(config-if-range)#switchport access vlan 30
+```
+
+And, you can see all VLANs like this command.
+
+```
+SW1(config-if-range)#do sh vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/16, Fa0/17, Fa0/18, Fa0/19
+                                                Fa0/20, Fa0/21, Fa0/22, Fa0/23
+                                                Fa0/24, Gig0/1, Gig0/2
+10   Developers                       active    Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                Fa0/5
+20   Pentesters                       active    Fa0/6, Fa0/7, Fa0/8, Fa0/9
+                                                Fa0/10
+30   Servers                          active    Fa0/11, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+```
 # VLAN Routing
 
 VLAN is the logical grouping of devices in the same or different broadcast domains. By default, all the switch ports are in VLAN 1. As the single broadcast domain is divided into multiple broadcast domains, Routers or layer 3 switches are used for intercommunication between the different VLANs.The process of intercommunication of the different Vlans is known as Inter Vlan Routing (IVR). Inter-VLAN routing is the ability to route, or send, traffic between VLANs that are normally blocked by default. Switches and VLANs work at the Data Link Layer (Layer 2). **Traffic can't be routed between VLANs at Layer 2 based on MAC addresses**.
@@ -46,6 +90,9 @@ Each physical interface of the router is assigned to a different VLAN and the ro
 
 ### Legacy Inter-VLAN Routing Configration
 
+Here is my unassigned legacy Inter VLAN topology.
+
+<p align="center"><img width="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/legacy_inter_vlan_topology.png"></p>
 
 
 ## Router On Stick
