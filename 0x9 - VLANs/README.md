@@ -179,7 +179,7 @@ A switch is a device that typically operates at layer 2 of the OSI model. It ins
 
 Here my starting topology. Let's assign IP address to user devices and do VLAN configration.
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/layer%203%20switch_inter_vlan_topology.png"></p>
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/MLSW_inter_vlan_topology.png"></p>
 
 After completed previous step, configure trunk protocol with switch-switch and switch-router.
 
@@ -226,7 +226,7 @@ MLSW(config-if)#ip add 192.168.30.1 255.255.255.0
 MLSW(config-if)#no shut
 ```
 
-You can access this topology [here]().
+You can access this topology [here](https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/MLSW_Inter-Vlan.pkt).
 
 ## STP
 ## DTP
