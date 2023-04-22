@@ -110,8 +110,59 @@ The Router’s interface is divided into sub-interfaces, which acts as a default
 
 Here is my soft topology. **Let's assign IP address to only user devices not router!**
 
-<p align="center"><img width="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/router_on_stick_topology.png"></p>
+<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/ROS_topology.png"></p>
 
+Later, create VLANs and configure trunk protocol. Trunk helps to exchange VLAN information one and other. In another words, it send packets to router one way.
+
+```
+S0(config)#vlan 10
+S0(config-vlan)#name DEVS
+S0(config-vlan)#vlan 20
+S0(config-vlan)#name CYBR
+S0(config-vlan)#ex
+S0(config)#int range fa0/1-10
+S0(config-if-range)#switchport mode access
+S0(config-if-range)#switchport access vlan 10
+```
+
+```
+S1(config)#vlan 10
+S1(config-vlan)#name DEVS
+S1(config-vlan)#vlan 20
+S1(config-vlan)#name CYBR
+S1(config-vlan)#ex
+S1(config)#int range fa0/11-20
+S1(config-if-range)#switchport mode access
+S1(config-if-range)#switchport access vlan 20
+```
+```
+S0(config)#int range fa0/11
+S0(config-if-range)#switchport mode trunk
+S0(config-if-range)#ex
+S0(config)#int range fastEthernet 0/21
+S0(config-if-range)#switchport mode trunk 
+```
+```
+S1(config)#int range fa0/10
+S1(config-if-range)#switchport mode trunk 
+```
+
+Finally, configure the router. First, enter the interface which is connected to switch and **just shutdown and exit**. Secondly, **give sub interface's IP address and subnetmask with VLAN ID after execute** `encapsulation dot1Q vlan ID` **command**.
+
+```
+R1(config)#int gi0/0/1
+R1(config-if)#no shut
+R1(config-if)#ex
+R1(config)#int range gi0/0/1.10
+R1(config-if-range)#encapsulation dot1Q 10
+R1(config-if-range)#ip add 192.168.10.1 255.255.255.0
+R1(config-if-range)#no shut
+R1(config-if-range)#ex
+R1(config)#int range gi0/0/1.20
+R1(config-if-range)#encapsulation dot1Q 20
+R1(config-if-range)#ip add 192.168.20.1 255.255.255.0
+R1(config-if-range)#no shut
+```
 
 ## Layer3 Switch Inter-VLAN Routing
 
