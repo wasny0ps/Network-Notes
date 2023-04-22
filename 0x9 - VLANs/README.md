@@ -32,7 +32,7 @@ There are three types Inter Vlan Routing:
 
 ## Legacy Inter-VLAN Routing
 
-<p align="center"><img width="600" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/legacy_inter_vlan.png"></p>
+<p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/legacy_inter_vlan.png"></p>
 
 
 The legacy inter-VLAN routing connects different physical router interfaces to different physical ports on the switch. **The switch ports connected to the router must be placed in access mode**.
