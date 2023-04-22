@@ -1,6 +1,6 @@
 # VLANs
 
-<p><img width="600" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/VLANs.gif"></p>
+<p align="center"><img width="600" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/VLANs.gif"></p>
 
 VLANs (Virtual LANs) are logical grouping of devices in the same broadcast domain. VLANs are configured on switches by placing some interfaces into one broadcast domain and some interfaces into another. VLANs can be spread across multiple switches. Each VLAN is treated like its own subnet or broadcast domain, which means that frames broadcast onto the network are only switched between the ports within the same VLAN.
 
@@ -21,14 +21,36 @@ VLANs (Virtual LANs) are logical grouping of devices in the same broadcast domai
 ## VLAN Configration
 
 # VLAN Routing
-## Old Inter-VLAN Routing
+
+VLAN is the logical grouping of devices in the same or different broadcast domains. By default, all the switch ports are in VLAN 1. As the single broadcast domain is divided into multiple broadcast domains, Routers or layer 3 switches are used for intercommunication between the different VLANs.The process of intercommunication of the different Vlans is known as Inter Vlan Routing (IVR). Inter-VLAN routing is the ability to route, or send, traffic between VLANs that are normally blocked by default. Switches and VLANs work at the Data Link Layer (Layer 2). **Traffic can't be routed between VLANs at Layer 2 based on MAC addresses**.
+
+There are three types Inter Vlan Routing:
+
+- Legacy Inter-VLAN Routing
+- Router On Stick
+- Layer3 Switch Inter-VLAN Routing
+
+## Legacy Inter-VLAN Routing
+
+<p align="center"><img width="600" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/legacy_inter_vlan.png"></p>
+
+
+The legacy inter-VLAN routing connects different physical router interfaces to different physical ports on the switch. **The switch ports connected to the router must be placed in access mode**.
+
+Each physical interface of the router is assigned to a different VLAN and the router interface then accepts the traffic from the VLAN related with the switch interface it is connected to. Then the router sends the traffic to other VLANs connected to the other interfaces. The figure below illustrates the legacy inter-VLAN routing process.
+
+### Legacy Inter-VLAN Routing Configration
+
+
+
 ## Router On Stick
 ## Layer3 Switch Inter-VLAN Routing
-## Etherchannel
+
 
 ## STP
 ## DTP
 ## VTP
+## Etherchannel
 
 ## VLAN Routing Configration
 
