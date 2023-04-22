@@ -101,11 +101,16 @@ In this step, create VLANs and configure it with correct topology informations. 
 
 ## Router On Stick
 
-<p align="center"><img width="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/router_on_stick.png"></p>
+<p align="center"><img width="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/router_on_stick.png"></p>
 
 
 The Router’s interface is divided into sub-interfaces, which acts as a default gateway to their respective VLANs.
 
+### Router On Stick Configration
+
+Here is my soft topology. **Let's assign IP address to only user devices not router!**
+
+<p align="center"><img width="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/router_on_stick_topology.png"></p>
 
 
 ## Layer3 Switch Inter-VLAN Routing
