@@ -1,6 +1,6 @@
 # VLANs
 
-<p><img src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/VLANs.gif"></p>
+<p><img width="600" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/VLANs.gif"></p>
 
 VLANs (Virtual LANs) are logical grouping of devices in the same broadcast domain. VLANs are configured on switches by placing some interfaces into one broadcast domain and some interfaces into another. VLANs can be spread across multiple switches. Each VLAN is treated like its own subnet or broadcast domain, which means that frames broadcast onto the network are only switched between the ports within the same VLAN.
 
