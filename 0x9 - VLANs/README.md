@@ -305,7 +305,7 @@ In Etherchannel, switchers can enable link configurations to be done dynamically
 
 ### Etherchannel Configration
 
-Here is my sweat topology.
+Here is my sweat topology. Let's assign IP address and create VLANs.
 
 <p align="center"><img width="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/0x9%20-%20VLANs/src/etherchannel_topology.png"></p>
 
