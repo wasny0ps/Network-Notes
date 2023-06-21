@@ -4,7 +4,7 @@ A domain is a **type of computer network** in which all user computers, printers
 
 ## Collision Domain
 
-<p align="center"><img height="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x0%20-%20Broadcast%20%26%20Collision%20Domain/src/collision_domain.gif"/></p>
+<p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x0%20-%20Broadcast%20%26%20Collision%20Domain/src/collision_domain.gif"/></p>
 
 A collision domain is, as the name implies, the part of a network where packet collisions can occur. A collision occurs when two devices send a packet at the same time on the shared network segment. The packets collide and both devices must send the packets again, which reduces network efficiency. Collisions are often in a hub environment because each port on a hub is in the same collision domain. By contrast, each port on a bridge, a switch, or a router is in a separate collision domain.
 
