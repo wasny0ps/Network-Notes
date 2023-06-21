@@ -1,7 +1,7 @@
 # Contents
 - [**Firewall**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#firewall)
 - [**WAF**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#waf)
-- [**Honeypat**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#honeypat)
+- [**Honeypot**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#honeypat)
 - [**UTM**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#utm)
 - [**NGFW**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#ngfw)
 - [**IDS**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#intrusion-detection-system-ids)
@@ -11,7 +11,7 @@
 
 # WAF
 
-# Honeypat
+# Honeypot
 
 # UTM
 
