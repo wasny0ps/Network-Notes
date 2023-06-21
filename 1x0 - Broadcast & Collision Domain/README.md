@@ -2,7 +2,7 @@
 
 A domain is a **type of computer network** in which all user computers, printers accounts, and other devices registered. **It is a central database located on single or multiple clusters of central computers, that is known as domain controllers**.
 
-## Collision Domain
+# Collision Domain
 
 <p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x0%20-%20Broadcast%20%26%20Collision%20Domain/src/collision_domain.gif"/></p>
 
@@ -29,7 +29,7 @@ Here is an example topology. as is also understood from the picture, we have 7 c
 - **Limited Scalability:** Collision Domain may not be scalable in larger networks, as the number of devices connected to the network increases, which can lead to network congestion and performance degradation.
 - **Complex Network Management:** Collision Domain can be complex to manage, requiring the use of protocols such as Carrier Sense Multiple Access with Collision Detection (CSMA/CD), which can be difficult to configure and maintain.
 
-  ## Broadcast Domain
+# Broadcast Domain
 
   <p align="center"><img height="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x0%20-%20Broadcast%20%26%20Collision%20Domain/src/broadcast_domain.gif"/></p>
 
