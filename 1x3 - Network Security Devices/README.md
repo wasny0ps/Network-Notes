@@ -14,6 +14,11 @@ IDS observes network traffic for malicious transactions and sends immediate aler
 
 - Usually, ***IDS connects to switch*** with **SPAN port**.
 
+***IDS have two types detection method***:
+
+- **Signature-based Method:** Signature-based IDS detects the attacks on the basis of the specific patterns such as the number of bytes or a number of 1s or the number of 0s in the network traffic. It also detects on the basis of the already known malicious instruction sequence that is used by the malware. The detected patterns in the IDS are known as signatures. Signature-based IDS can easily detect the attacks whose pattern (signature) already exists in the system but it is quite difficult to detect new malware attacks as their pattern (signature) is not known.
+- **Anomaly-based Method:** Anomaly-based IDS was introduced to detect unknown malware attacks as new malware is developed rapidly. In anomaly-based IDS there is the use of machine learning to create a trustful activity model and anything coming is compared with that model and it is declared suspicious if it is not found in the model. The machine learning-based method has a better-generalized property in comparison to signature-based IDS as these models can be trained according to the applications and hardware configurations.
+
 ## How Does IDS work?
 
 - An IDS (Intrusion Detection System) monitors the traffic on a computer network to detect any suspicious activity.
@@ -32,3 +37,8 @@ IDS observes network traffic for malicious transactions and sends immediate aler
 ## Desadvantages Of IDS
 - **It doesn't block an attack. Just detect it.**
 - **It doesn't make provision for attacks so network administrator should make it.**
+
+# Intrusion Prevent System (IPS)
+
+It is a network security application that **monitors network or system activities for malicious activity**. Major functions of intrusion **prevention systems are to identify malicious activity**, **collect information about this activity**, **report it and attempt to block or stop it**. IPS typically record information related to observed events, notify security administrators of important observed events and produce reports. Many IPS can also respond to a detected threat by attempting to prevent it from succeeding. They use various response techniques, which involve the IPS stopping the attack itself, changing the security environment or changing the attack’s content. 
+
