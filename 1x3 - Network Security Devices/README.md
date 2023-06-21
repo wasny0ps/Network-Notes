@@ -4,7 +4,7 @@
 - [**Honeypat**]()
 - [**UTM**]()
 - [**NGFW**]()
-- [**IDS**](https://github.com/wasny0ps/Network-Notes/edit/main/1x3%20-%20Network%20Security%20Devices/README.md#intrusion-detection-system-ids)
+- [**IDS**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#intrusion-detection-system-ids)
 - [**IPS**]()
 # Intrusion Detection System (IDS)
 
