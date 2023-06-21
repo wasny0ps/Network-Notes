@@ -5,7 +5,7 @@
 - [**UTM**]()
 - [**NGFW**]()
 - [**IDS**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#intrusion-detection-system-ids)
-- [**IPS**]()
+- [**IPS**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#intrusion-prevent-system-ips)
 # Intrusion Detection System (IDS)
 
 <p align="center"><img src="https://github.com/wasny0ps/Network-Notes/blob/main/1x3%20-%20Network%20Security%20Devices/src/IDS.png" /></p>
