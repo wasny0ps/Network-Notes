@@ -33,3 +33,34 @@ Here is an example topology. as is also understood from the picture, we have 7 c
 
   <p align="center"><img height="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x0%20-%20Broadcast%20%26%20Collision%20Domain/src/broadcast_domain.gif"/></p>
 
+A broadcast domain is a logical division of a computer network. In this type of domain, **nodes can reach each other using broadcast at the data link layer**. A broadcast domain either in the same LAN segment or which can bridge to other LAN networks. This domain contains all devices which can reach each other at the data link layer with the help of broadcast. **Every port on a switch or in a hub should be in the same broadcast domain**.
+
+However, **all port on a router are in the distinct broadcast domains**, and **routers never broadcast from one domain to another**. Let's look at an example topology.
+
+<p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x0%20-%20Broadcast%20%26%20Collision%20Domain/src/broadcast_domain_example.png"/></p>
+
+It clearly show us there are three broadcast domain. In these three domains are connected to router. In other words, **every router's leg is broadcast domain**.
+
+## Advantage Of Broadcast Domain
+
+- **Efficient Network Communication:** Broadcast Domain enables efficient network communication by allowing multiple devices to receive the same message simultaneously.
+- **Simplified Network Management:** Broadcast Domain can simplify network management by allowing administrators to manage network devices and policies more easily.
+- **Improved Collaboration:** Broadcast Domain can improve collaboration by enabling real-time communication and collaboration among network users.
+
+## Disadvantage Of Broadcast Domain
+- **Increased Network Congestion:** Broadcast Domain can lead to increased network congestion, particularly in larger networks, which can impact network performance and lead to packet loss.
+- **Reduced Network Security:** Broadcast Domain can reduce network security by increasing the risk of unauthorized access and network attacks, particularly in environments with a large number of devices.
+
+## Broadcast vs Collision Domain
+
+|Broadcast Domain|Collision Domain|
+|:--|:--|
+|A Broadcast domain is a type of domain wherein traffic flows all over the network.|The Collision domain is a network section that allows traffic to flow forward and backward.|
+|Broadcast domain refers to a logical set of reachable computer systems without using a router.|The Collision domain refers to a set of devices in which packet collision could occur.|
+|Broadcast domain is never limited to the specific IP subnetwork for all types of IP broadcasts.|The devices might include the devices of other IP subnetworks.|
+|The broadcast domain mostly uses a switched environment to broadcast, so no collision occurs.|Packet collision occurs as multiple devices transmit data on a single wire link.|
+|Switches will never break in the broadcast domain.|Switches will break in the collision domain.|
+|All ports on a switch or a hub likely to be in the same broadcast domain.|In, collision domain, every port on a router are in the separate broadcast domains.|
+
+
+**_by wasny0ps_**
