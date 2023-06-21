@@ -39,7 +39,7 @@ However, **all port on a router are in the distinct broadcast domains**, and **r
 
 <p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x0%20-%20Broadcast%20%26%20Collision%20Domain/src/broadcast_domain_example.png"/></p>
 
-It clearly show us there are three broadcast domain. In these three domains are connected to router. In other words, **every router's leg is broadcast domain**.
+It clearly shows us there are three broadcast domains in this topology. Also, these three domains are connected to the router. In other words, **every router's leg is the broadcast domain**.
 
 ## Advantage Of Broadcast Domain
 
