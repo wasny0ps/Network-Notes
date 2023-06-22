@@ -1,19 +1,77 @@
-# Contents
-- [**Firewall**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#firewall)
-- [**WAF**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#waf)
-- [**Honeypot**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#honeypat)
-- [**UTM**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#utm)
-- [**NGFW**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#ngfw)
-- [**IDS**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#intrusion-detection-system-ids)
-- [**IPS**](https://github.com/wasny0ps/Network-Notes/tree/main/1x3%20-%20Network%20Security%20Devices#intrusion-prevent-system-ips)
-
 # Firewall
+<p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x3%20-%20Network%20Security%20Devices/src/firewall.gif" /></p>
+
+A firewall is a network security device that **monitors incoming and outgoing network traffic** and **decides whether to allow or block specific traffic based on a defined set of security rules**. Firewalls have been a first line of defense in network security for over 25 years. They establish a barrier between secured and controlled internal networks that can be trusted and untrusted outside networks, such as the Internet. **A firewall can be hardware, software, software-as-a service (SaaS), public cloud, or private cloud (virtual)**. Also, it is divided into two groups according to the firewall structure.
+
+## Software Firewall
+
+A software firewall is a special type of computer software that runs on a computer/server. Its main purpose is to protect your computer/server from outside attempts to control or gain access and depending on your choice of a software firewall. A software firewall can also be configured for checking any suspicious outgoing requests.
+
+### Advantages Of Software Firewall
+- Helpful in blocking particular sites.
+- Juniors and parental controls can be supervised.
+- Ease in maintenance.
+- Valuable for home users.
+- Assignment of different levels of access and permissions to the user can be done with ease.
+
+### Disadvantages Of Software Firewall
+- Installation and up-gradation are required on individual computers.
+- Slow performance of the system.
+- Due to its installation, system resources are consumed.
+- Does not work on smart TVs, gaming consoles, etc.
+
+## Hardware Firewall
+It is physical piece of equipment planned to perform firewall duties. A hardware firewall can be a computer or a dedicated piece of equipment which serve as a firewall. Hardware firewall are incorporated into the router that is situated between the computer and the internet gateway. 
+
+### Advantages Of Hardware Firewall
+- Independently run so less prone to cyber-attacks.
+- Installation is external so resources are free from the server.
+- Increased bandwidth enables the handling of more data packets per second.
+- Reduced latency.
+- VPN connection is also supported for increased security and encryption.
+
+### Disadvantages Of Hardware Firewall
+- Hardware devices can take extra space.
+- A skilled IT person is required.
+- Upgradation challenge as it is not cost-effective because multiple devices need to be replaced.
+
+## Software Firewall vs Hardware Firewall	
+
+|Parameter|Software Firewall|Hardware Firewall|
+|:-:|-|-|
+|Configuration|Configuration of a software firewall is easy.|Configuration of hardware firewall is not easy.|
+|Operates on|A software Firewall operates on the system.|Hardware Firewall do not operate on the system.|
+|Working|It is installed on individual devices like computes and phones which results in blocking users or devices from accessing the individual components of the network.|It is required to install the device between the computer and the Internet so that it will not be easily accessible. The installation requires a connection of network cable with the firewall rather than directly connecting to the router.|
+|Cost|It is less expensive to install though the cost may increase in case of variation in computers.|It is more expensive than a software firewall as an initial investment is required based on the protection level.|
+|Flexibility|It is flexible, you can choose which application has to be installed.|It is not flexible like software firewall.|
+|Installation|It is installed inside the individual system.|It is installed outside the system.|
+|Protects|It protects one system at a time and is not enabled for smart TVs, gaming consoles, and other devices.|It protects a whole network at a time.|
+|Performance|It makes the performance of computers slows down.|It doesn’t affect the performance of the computer.|
+|Requirement|It is needed to be installed on every individual system on a network.|It needs only one hardware to be installed for a whole network.|
+|Blocking|In software firewall, content based on keywords can be blocked.|A domain or website can be blocked using hardware firewall.|
+
 
 # WAF
 
+<p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x3%20-%20Network%20Security%20Devices/src/WAF.gif" /></p>
+
+A web application firewall, or WAF, is a security tool for **monitoring, filtering and blocking incoming and outgoing data packets from a web application or website**. WAFs can be **host-based**, **network-based** or **cloud-based** and are typically **deployed through reverse proxies and placed in front of an application or website**. WAFs can run as network appliances, server plugins or cloud services, inspecting each packet and **analyzing application layer (Layer 7) logic according to rules to filter out suspicious or dangerous traffic**.
+
+- **Network-based WAF:** It is generally hardware-based. Since they are installed locally they minimize latency, but network-based WAFs are the **most expensive option** and also **require the storage and maintenance of physical equipment**.
+- **Host-based WAF:** It may be fully integrated into an application’s software. This solution is less expensive than a network-based WAF and offers more customizability. The downside of a host-based WAF is the consumption of local server resources, implementation complexity, and maintenance costs. These components typically require engineering time, and may be costly.
+- **Cloud-based WAF:** It offers an affordable option that is very easy to implement; they usually offer a turnkey installation that is as simple as a change in DNS to redirect traffic. Cloud-based WAFs also have a **minimal upfront cost**, as users pay monthly or annually for security as a service. Cloud-based WAFs can also offer a solution that is **consistently updated to protect against the newest threats without any additional work** or cost on the user’s end.
+
 # Honeypot
 
-# UTM
+<p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x3%20-%20Network%20Security%20Devices/src/honeypot.png" /></p>
+
+A honeynet is a network of honeypots that is **designed to look like a real network**, complete with multiple systems, databases, servers, routers and other digital assets. Since the honeynet, or honeypot system, mimics the sprawling nature of a typical network, it tends to engage cybercriminals for a longer period of time. Given the size of the honeynet, it is also possible to manipulate the environment, luring adversaries deeper into the system in order to gather more intelligence about their capabilities or their identities.
+
+# Unified Threat Management (UTM)
+
+<p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x3%20-%20Network%20Security%20Devices/src/UTM.png" /></p>
+
+UTM refers to when multiple security features or services are combined into a single device within your network. Using UTM, your network’s users are protected with several different features, including antivirus, content filtering, email and web filtering, anti-spam, and more. UTM enables an organization to consolidate their IT security services into one device, potentially simplifying the protection of the network. As a result, your business can monitor all threats and security-related activity through a single pane of glass. In this way, you attain complete, simplified visibility into all elements of your security or wireless architecture.
 
 # NGFW
 
