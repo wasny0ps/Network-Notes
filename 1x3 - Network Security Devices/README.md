@@ -73,7 +73,10 @@ A honeynet is a network of honeypots that is **designed to look like a real netw
 
 UTM refers to when multiple security features or services are combined into a single device within your network. Using UTM, your network’s users are protected with several different features, including antivirus, content filtering, email and web filtering, anti-spam, and more. UTM enables an organization to consolidate their IT security services into one device, potentially simplifying the protection of the network. As a result, your business can monitor all threats and security-related activity through a single pane of glass. In this way, you attain complete, simplified visibility into all elements of your security or wireless architecture.
 
-# NGFW
+## Data Loss Prevention (DLP)
+
+The data loss prevention you **get with a UTM appliance enables you to detect data breaches and exfiltration attempts and then prevent them**. To do this, the data loss prevention system **monitors sensitive data**, and when it identifies an attempt by a malicious actor to steal it, blocks the attempt, **thereby protecting the data**.
+
 
 # Intrusion Detection System (IDS)
 
