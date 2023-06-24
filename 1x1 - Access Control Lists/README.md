@@ -102,9 +102,37 @@ The command above moves you to the ACL configuration mode, where you can configu
 
 <p align="center"><img height="200" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/named_ACL_topology.png"></p>
 
-We want to deny the user’s workstation any type of access to the DNS. We also want to enable the user unrestricted access to the FTP. First, we will create and name our ACL:
+We want to deny the user’s workstation any type of access to the domain server. We also want to enable the user unrestricted access to the file share. First, we will create and name our ACL:
 
+```
+Router(config)#ip access-list extended allow_file_share
+```
+Once inside the ACL config mode, we need to create a statement that will deny the user’s workstation access to the domain server:
+```
+Router(config-ext-nacl)#20 deny ip 10.0.0.2 0.0.0.0 192.168.0.2 0.0.0.0
+```
 
+The number 20 represents the line in which we want to place this entry in the ACL. This allows us to reorder statements later if needed. Now, we will execute a statement that will permit the workstation access to the file share:
 
+```
+Router(config-ext-nacl)#50 permit ip 10.0.0.2 0.0.0.0 192.168.0.3 0.0.0.0
+```
 
+Lastly, we need to apply the access list to the Gi0/0/0 interface on the router:
 
+```
+Router(config)#int gi0/0/0
+Router(config-if)#ip access-group allow_traffic_fileshare in
+```
+The commands above will force the router to evaluate all packets trying to enter Gi0/0/0. If the workstation tries to access the domain server, the traffic will be forbidden because of the first ACL statement. However. if the user tries to access the file server, the traffic will be allowed, because of the second statement. Our named ACL configuration looks like this:
+
+```
+Router#sh ip access-lists 
+Extended IP access list allow_file_share
+    20 deny ip host 10.0.0.2 host 192.168.0.2 (2 match(es))
+    50 permit ip host 10.0.0.2 host 192.168.0.3 (2 match(es))
+```
+
+Notice the sequence number at the beginning of each entry. If we need to stick a new entry between these two entries, we can do that by specifying a sequence number in the range between 20 and 50. If we don’t specify the sequence number, the entry will be added to the bottom of the list. Let's pinging to server from the different network's computers for check the configuration. Here is a proof of our named ACL configuration works correctly. Finally, you can get this topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/Named_ACL.pkt)
+
+<p align="center"><img height="200" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/valideting.png"></p>
