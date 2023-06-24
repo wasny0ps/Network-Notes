@@ -47,7 +47,7 @@ After completing the configuration, we access the web page successfully.
 
 <p align="center"><img height="200" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/web_page.png"></p>
 
-Also, you can validate your topology `show ip nat translations` command on the router. And you can get my topology from [here](https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/Static_NAT.pkt)
+Also, you can validate your topology `show ip nat translations` command on the router. And you can get my topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/Static_NAT.pkt)
 
 ```
 Router#show ip nat translations 
@@ -63,6 +63,16 @@ In Dynamic NAT, **IP addresses are dynamically mapped to each other on a one-to-
 
 ## Dynamic NAT Configuration
 
+> In this configuration, ACL will be used. If you don't know ACL configuration, you should [check this directory.](https://github.com/wasny0ps/Network-Notes/tree/main/1x1%20-%20Access%20Control%20Lists) 
+
+For dynamic NAT configuration, you must do these four steps that we will do:
+
+- Configure the interface in the inside global or local as `ip nat outside / inside` command.
+- **Create a pool of global IP addresses** with `ip nat pool <pool-name> <starting-IP> <ending-IP> prefix-length <prefix-length>` command.
+- **Create an access list to permit a certain network of IP addresses** with `access-list <acl-number> permit <source-ip-network> <wildcard-mask>` command.
+- Lastly, **enable dynamic NAT** by using the command `ip nat inside source list <acl-number> pool <pool-name>` command.
+
+  <p align="center"><img height="200" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/dynamic_NAT_topology.png"></p>
 
 
 ## NAT Overlaod (PAT)
