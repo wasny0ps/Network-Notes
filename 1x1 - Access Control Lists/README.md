@@ -38,6 +38,47 @@ Let's consider that we have a topology like this picture. We want only developer
 
 <p align="center"><img height="500" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/standard_ACL_topology.png"></p>
 
+First of all, you must do RIP configuration on routers. If you don't how to configure it, you should [check this directory.](https://github.com/wasny0ps/Network-Notes/tree/main/0x8%20-%20Dynamic%20Routing)
+
+After then, we want to allow traffic from the developer LAN to the server. First, we need to write an ACL to permit traffic from LAN 192.168.10.0/24 to server. We can use the following command on the router:
+
+```
+Router(config)#access-list 1 permit 192.168.10.0 0.0.0.255
+```
+
+The command above permits traffic from all IP addresses that begin with 10.0.0. We could also target the specific host by using the host keyword:
+
+```
+Router(config)#access-list 1 permit host 192.168.10.2
+Router(config)#access-list 1 permit host 192.168.10.3
+```
+Next, we will deny traffic from the Users LAN:
+
+```
+Router(config)#access-list 1 deny 192.168.20.0 0.0.0.255
+```
+
+Next, we need to apply the access list to an interface. It is recommended to place the standard access lists as **close to the destination as possible**. In our case, this is the Gi0/0/0 interface on the router. Since we want to evaluate all packets trying to exit out Gi0/0/0, we will specify the outbound direction with the out keyword:
+
+```
+Router(config)#int gi0/0/0
+Router(config-if)#ip access-group 1 out
+```
+
+Let's pinging to server from the different network's computers for check the configuration.
+
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/pinging.png"></p>
+
+We done successfully. Also you can validate your ACL with `show ip access-list <acl-number>` command. What is more, you can get this topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/Standard_ACL.pkt)
+
+```
+Router#show ip access-lists 1
+Standard IP access list 1
+    permit 192.168.10.0 0.0.0.255 (4 match(es))
+    permit host 192.168.10.2
+    permit host 192.168.10.3
+    deny 192.168.20.0 0.0.0.255 (4 match(es))
+```
 
 ## Extended ACL
 
@@ -50,3 +91,20 @@ Extended Access-Lists are enhanced versions of standard ACLs. In Extended ACLs, 
 Named Access-Lists are the ACLs, which **uses ACL names instead of ACL numbers**. **They can be used with both Standard and Extended ACLs**. These type of ACLs are **more memorable because of the explanatory names**.
 
 ## Named ACL Configuration
+
+The named ACL name and type is defined using the following syntax:
+
+```
+Router(config) ip access-list STANDARD|EXTENDED NAME
+```
+The command above moves you to the ACL configuration mode, where you can configure the permit and deny statements. Just like with numbered ACLs, named ACLs ends with the implicit deny statement, so **any traffic not explicitly permitted will be forbidden**. In this configuration, we will use the following network in our configuration example:
+
+
+<p align="center"><img height="200" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/named_ACL_topology.png"></p>
+
+We want to deny the user’s workstation any type of access to the DNS. We also want to enable the user unrestricted access to the FTP. First, we will create and name our ACL:
+
+
+
+
+
