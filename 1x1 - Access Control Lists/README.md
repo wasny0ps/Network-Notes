@@ -86,6 +86,24 @@ Extended Access-Lists are enhanced versions of standard ACLs. In Extended ACLs, 
 
 ## Extended ACL Configuration
 
+Two steps are required to configure an extended access list:
+
+- Configure an extended access list using the following command.
+
+```
+Router(config)#access list NUMBER permit|deny IP_PROTOCOL SOURCE_ADDRESS WILDCARD_MASK [PROTOCOL_INFORMATION] DESTINATION_ADDRESS WILDCARD_MASK PROTOCOL_INFORMATION
+```
+
+- Apply an access list to an interface using `ip access-group ACL_NUMBER in | out` command.
+
+To better understand the concept of extended access lists, consider the following example:
+
+
+<p align="center"><img height="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_ACL_topology.png"></p>
+
+In this example, we want to **Users access only the server's web service**. **The developer access only server's FTP service**. And **Hacker's pc shouldn't get access to any service of this server**. First, 
+
+
 ## Named ACL
 
 Named Access-Lists are the ACLs, which **uses ACL names instead of ACL numbers**. **They can be used with both Standard and Extended ACLs**. These type of ACLs are **more memorable because of the explanatory names**.
@@ -133,6 +151,6 @@ Extended IP access list allow_file_share
     50 permit ip host 10.0.0.2 host 192.168.0.3 (2 match(es))
 ```
 
-Notice the sequence number at the beginning of each entry. If we need to stick a new entry between these two entries, we can do that by specifying a sequence number in the range between 20 and 50. If we don’t specify the sequence number, the entry will be added to the bottom of the list. Let's pinging to server from the different network's computers for check the configuration. Here is a proof of our named ACL configuration works correctly. Finally, you can get this topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/Named_ACL.pkt)
+Notice the sequence number at the beginning of each entry. If we need to stick a new entry between these two entries, we can do that by specifying a sequence number in the range between 20 and 50. If we don’t specify the sequence number, the entry will be added to the bottom of the list. Let's pinging to server from the different network's computers for check the configuration. Here is an image with proof that our named ACL configuration is working correctly. Finally, you can get this topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/Named_ACL.pkt)
 
-<p align="center"><img height="200" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/valideting.png"></p>
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/valideting.png"></p>
