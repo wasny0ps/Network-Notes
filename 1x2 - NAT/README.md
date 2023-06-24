@@ -141,7 +141,7 @@ The access list defined above includes all IP addresses from the 10.10.10.0 – 
 Router(config)#ip nat inside source list 1 interface Gi0/0/1 overload
 ```
 
-To verify the NAT translations, we can use the `show ip nat translations` command after hosts request a web resource from the switch.
+To verify the NAT translations, we can use the `show ip nat translations` command after hosts request a web resource from the switch. Finally, you can access our example from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/PAT.pkt)
 
 ```
 Router#show ip nat translations 
