@@ -72,11 +72,84 @@ For dynamic NAT configuration, you must do these four steps that we will do:
 - **Create an access list to permit a certain network of IP addresses** with `access-list <acl-number> permit <source-ip-network> <wildcard-mask>` command.
 - Lastly, **enable dynamic NAT** by using the command `ip nat inside source list <acl-number> pool <pool-name>` command.
 
-  <p align="center"><img height="200" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/dynamic_NAT_topology.png"></p>
+Here is an example of dynamic NAT topology. Let's start.
 
+  <p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/dynamic_NAT_topology.png"></p>
+
+First of all, we need RIP configuration on routers. If you don't know how to configurate RIP, you should also [check this directory.](https://github.com/wasny0ps/Network-Notes/tree/main/0x8%20-%20Dynamic%20Routing)
+
+  
+```
+R1(config)#int gi0/0/1
+R1(config-if)#ip nat outside
+R1(config-if)#exit
+R1(config)#int gi0/0/0
+R1(config-if)#ip nat inside
+R1(config-if)#exit
+R1(config)#ip nat pool pool1 20.1.1.5 20.1.1.20 netmask 255.255.255.0
+Router(config)#access-list 120 permit tcp 192.168.1.0 0.0.0.255 10.0.0.0 0.0.0.255 eq 80
+Router(config)#access-list 120 permit tcp 192.168.1.0 0.0.0.255 10.0.0.0 0.0.0.255 eq 21
+R1(config)#access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)#int gigabitEthernet 0/0/1
+Router(config-if)#ip access-group 120 out
+Router(config-if)#ex
+Router(config)#ip nat inside source list 120 pool pool1 
+```
 
 ## NAT Overlaod (PAT)
 
 With Port Address Translation (PAT), a single public IP address is used for all internal private IP addresses, but a different port is assigned to each private IP address. This type of NAT is also known as NAT Overload and is the typical form of NAT used in today’s networks. It is even supported by most consumer-grade routers. PAT allows you to support many hosts with only few public IP addresses. It works by creating dynamic NAT mapping, in which a global (public) IP address and a unique port number are selected. The router keeps a NAT table entry for every unique combination of the private IP address and port, with translation to the global address and a unique port number.
 
+## NAT Overlaod (PAT) Configuration
 
+We will use the following example network to explain the benefits of using PAT:
+
+|Private IP Address : Port|Public IP Address : Port| 
+|:-:|:-:|
+|10.0.0.2:1055|192.168.10.2:1055| 
+|10.0.0.3:1055|192.168.10.2:1055|
+|10.0.0.4:1055|192.168.10.2:1055|
+
+<p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/PAT_topology.png"></p>
+
+As you can see in the table, PAT uses unique source port numbers on the inside global (public) IP address to distinguish between translations. For example, if the host with the IP address of 10.0.0.3 wants to access the server on the Internet, the host’s private IP address will be translated by router to 192.168.10.1:1055 and the request will be sent to the switch. And switch will respond to 192.168.10.1:1055. Router will receive that response, look up in its NAT translation table, and forward the request to the host.
+
+To configure PAT, the following commands are required:
+
+- Configure the router’s inside interface using the `ip nat inside` command.
+- Configure the router’s outside interface using the `ip nat outside` command.
+- Configure an access list that includes a list of the inside source addresses that should be translated.
+- Enable PAT with the `ip nat inside source list <acl-number> interface type overload` global configuration command.
+
+First, we will define the outside and inside interfaces on the router:
+```
+Router(config)#int gigabitEthernet 0/0/0
+Router(config-if)#ip nat inside
+Router(config-if)#ex
+Router(config)#int gigabitEthernet 0/0/1
+Router(config-if)#ip nat outside
+```
+Next, we will define an access list that will include all private IP addresses we would like to translate:
+
+```
+Router(config)#access-list 1 permit 10.10.10.0 0.0.0.255
+```
+
+The access list defined above includes all IP addresses from the 10.10.10.0 – 10.10.10.255 range. Now we need to enable NAT and refer to the ACL created in the previous step and to the interface whose IP address will be used for translations:
+
+```
+Router(config)#ip nat inside source list 1 interface Gi0/0/1 overload
+```
+
+To verify the NAT translations, we can use the `show ip nat translations` command after hosts request a web resource from the switch.
+
+```
+Router#show ip nat translations 
+Pro  Inside global     Inside local       Outside local      Outside global
+icmp 192.168.10.1:1024 10.10.10.2:2       192.168.10.2:2     192.168.10.2:1024
+icmp 192.168.10.1:1    10.10.10.2:1       192.168.10.2:1     192.168.10.2:1
+icmp 192.168.10.1:2    10.10.10.4:2       192.168.10.2:2     192.168.10.2:2
+icmp 192.168.10.1:3    10.10.10.3:3       192.168.10.2:3     192.168.10.2:3
+```
+
+**_by wasny0ps_**
