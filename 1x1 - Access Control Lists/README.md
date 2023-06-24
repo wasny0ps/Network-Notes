@@ -99,7 +99,7 @@ Router(config)#access list NUMBER permit|deny IP_PROTOCOL SOURCE_ADDRESS WILDCAR
 To better understand the concept of extended access lists, consider the following example:
 
 
-<p align="center"><img height="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_ACL_topology.png"></p>
+<p align="center"><img height="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/_ACL_topology.png"></p>
 
 In this example, we want to **Users access only the server's web service**. **The developer access only server's FTP service**. And **Hacker's pc shouldn't get access to any service of this server**. First, 
 
