@@ -43,12 +43,27 @@ Router(config)#interface gigabitEthernet 0/0/1
 Router(config-if)#ip nat outside
 ```
 
+After completing the configuration, we access the web page successfully.
 
+<p align="center"><img height="200" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/web_page.png"></p>
 
+Also, you can validate your topology `show ip nat translations` command on the router. And you can get my topology from [here](https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/Static_NAT.pkt)
+
+```
+Router#show ip nat translations 
+Pro  Inside global     Inside local       Outside local      Outside global
+---  100.100.100.20    192.168.1.2        ---                ---
+---  100.100.100.30    192.168.1.3        ---                ---
+tcp 100.100.100.20:1025192.168.1.2:1025   100.100.100.2:80   100.100.100.2:80
+```
 
 ## Dynamic NAT
 
-In Dynamic NAT, IP addresses are dynamically mapped to each other on a one-to-one basis as per the needs. It establishes a mapping between an Inside Local IP address and a pool of Global IP addresses. This type of translation is very useful when there are multiple users in a private network that access the Internet. These Dynamic NAT Translations stay in the translation table until there is traffic flowing from the Local IP address to Global IP address or until the timeout time (24 hours by default) has expired.
+In Dynamic NAT, **IP addresses are dynamically mapped to each other on a one-to-one basis as per the needs**. It establishes a **mapping between an inside local IP address and a pool of global IP addresses**. This type of translation is very useful when there are multiple users in a private network that access the Internet. These Dynamic NAT translations stay in the translation table until there is traffic flowing from the local IP address to global IP address or until the timeout time (24 hours by default) has expired.
+
+## Dynamic NAT Configuration
+
+
 
 ## NAT Overlaod (PAT)
 
