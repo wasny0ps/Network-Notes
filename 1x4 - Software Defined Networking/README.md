@@ -2,7 +2,7 @@
 
 <p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/SDN.png"></p>
 
-SDN stands for Software Defined Network which is a networking architecture approach. It **enables the control and management of the network using software applications**. **Through Software Defined Network (SDN) networking behavior of the entire network and its devices are programmed in a centrally controlled manner through software applications using open APIs**. 
+SDN stands for Software Defined Networking which is a networking architecture approach. It **enables the control and management of the network using software applications**. **Through Software Defined Network (SDN) networking behavior of the entire network and its devices are programmed in a centrally controlled manner through software applications using open APIs**. 
 
 Generally, **enterprises use SDN**, the most widely used method for application deployment, to deploy applications faster while lowering overall deployment and **operating costs**. **SDN allows IT administrators to manage and provision network services from a single location**. And, cloud networking software-defined uses white-box systems. cloud providers often use generic hardware so that the cloud data center can be changed and the cost of **CAPEX and OPEX** saved. To understand software-defined networks, we need to understand the various **planes involved in networking**:
 
@@ -29,15 +29,15 @@ In short, it can be said that **SDN acts as a “Bigger Umbrella or a HUB”** w
 
 ### Advantages of SDN
 
-- The network is programmable and hence can easily be modified via the controller rather than individual switches.
-- Switch hardware becomes cheaper since each switch only needs a data plane.
+- The network is **programmable** and hence can **easily be modified via the controller rather than individual switches**.
+- **Switch hardware becomes cheaper** since each switch only needs a data plane.
 - Hardware is abstracted, hence applications can be written on top of the controller independent of the switch vendor.
-- Provides better security since the controller can monitor traffic and deploy security policies. For example, if the controller detects suspicious activity in network traffic, it can reroute or drop the packets.
+- Provides better security since the controller can **monitor traffic** and **deploy security policies**. For example, if the controller detects suspicious activity in network traffic, it can reroute or drop the packets.
 
 ### Disadvantages of SDN
 
-- The central dependency of the network means a single point of failure, i.e. if the controller gets corrupted, the entire network will be affected.
-- The use of SDN on large scale is not properly defined and explored.
+- The central dependency of the network means a **single point of failure**, if the controller gets corrupted, the entire network will be affected.
+- The use of SDN **on large scale is not properly defined and explored**.
 
 
 ## Difference Between SDN & Traditional Networking
@@ -59,27 +59,50 @@ The three main components that make the SDN are:
 - **SDN controller:** SDN Controller collects network information from hardware and sends this information to applications. 
 - **SDN networking devices:** SDN Network devices help in forwarding and data processing tasks.
 
-## SDN Applications
 
 ## SDN Controller
 
-All traditional networking devices like router and switches uses distributed control plane. But newer model of networking, Software Defined Networking (SDN) uses centralized control plane. Distributed control plane means that control plane of all networking devices lies within the device itself. 
+All traditional networking devices like router and switches uses distributed control plane. But newer model of networking, **Software Defined Networking (SDN) uses centralized control plane**. Distributed control plane means that control plane of all networking devices lies within the device itself. 
 
-Each device have their own control plane to control data plane. In Centralized control plane system, there is a device which contains control plane of all devices. This device control the activities of data plane of all networking devices simultaneously. This device is called Controller or SDN controller. The following figure shows a model of controller based networking. 
+Each device have their own control plane to control data plane. In centralized control plane system, there is a device which contains control plane of all devices. This device control the activities of data plane of all networking devices simultaneously. This device is called **controller or SDN controller**. The following figure shows a model of controller based networking. 
 
 <p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/SDN_controller.png"></p>
 
 
 #### Southbound Interface
 
-In SDN, all networking devices must be connected to controller so that it can regulate data planes of all devices. When drawing architecture of network, usually the network architect places networking devices below controller. Now according to map conventions, interface between controller and networking devices lies to south of controller. Hence, these interfaces are called Southbound Interface. 
+In SDN, all networking devices must be connected to controller so that it can **regulate data planes of all devices**. When drawing architecture of network, usually the network architect places networking devices below controller. Now according to map conventions, interface between controller and networking devices lies to south of controller. Hence, these interfaces are called Southbound Interface. 
 
-Southbound interface is an interface between a program on controller and a program on networking device. Note that these interfaces we are discussing are software interface not physical one. 
+**Southbound interface is an interface between a program on controller and a program on networking device**. Note that these interfaces we are discussing are software interface **not physical** one. There is some alternativies for using southbound interface such as:
 
-#### Nortbound Interface
+- **OpenFlow**
+- **Cisco OpFlex**
+- **CLI**
 
-Controller need to know many information regarding network so that it can control data plane of networking devices All these information are provided by Network Programmer. Network Programmer provide essential information to controller through various software or script about what functions it has to do. Again these softwares/scripts are placed above controller in network architecture. This placement of software/script makes interfaces between controller and software in north direction, according to map conventions. Hence, Interfaces between controller and softwares are called Northbound Interface. These interfaces enable programmability of network. 
+#### OpenFlow
+
+<p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/openflow.png"></p>
+
+OpenFlow is a communication protocol and the basic component of the software-defined networking structure located in the network control and routing regions. SDN creates network intelligence and admin center in software controllers that maintain the global view of the network. Currently, OpenFlow is the **only open standards-based protocol for communicating between an SDN controller and network details**. **It enables direct programming of network hardware such as both physical and virtual switches and external agents to make networks more dynamic, manageable, slower speeds and alert**.
+
+An important feature of OpenFlow is that **it uses streams to define network traffic based on predefined matching rules that can be programmed statically or dynamically using SDN control software**. In simpler terms, OpenFlow **transmits information from a controller to switches and tells them what to do**. In turn, switches provide counters and other data to the controller.
+
+Because it works on flows, OpenFlow provides granular control of IT to respond to real-time changes in application, user, and session levels. OpenFlow allows IT to define how traffic should flow through the network based on factors such as usage patterns, application requirements, service level agreements, and cloud resources.
+
+#### Cisco Opflex
+
+OpFlex is a southbound protocol in a software-defined network (SDN) designed for communications between the SDN Controller and the infrastructure (switches and routers). The keyword here is **“Multi-vendor environment”** – i.e. Openflow designed to support all the vendor networking devices. The goal is to create a standard that enables policies to be applied across physical and virtual switches/routers in a multi-vendor environment.
+
+#### Northbound Interface
+
+<p align="center"><img height="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/northbound.png"></p>
+
+Controller need to know many information regarding network so that it can control data plane of networking devices All these information are provided by network programmer. network programmer provide essential information to controller through various software or script about what functions it has to do. Again these softwares/scripts are placed above controller in network architecture. This placement of software/script makes interfaces between controller and software in north direction, according to map conventions. Hence, Interfaces between controller and softwares are called Northbound Interface. These interfaces enable programmability of network. 
 All interfaces we discussed above are program based interfaces. These interfaces in a broader sense are called Application Program Interface (API). An API is an interface through which two program can exchange data between them.
+
+Numerous applications via API SDN controller can access:
+- Information about the network from the SDN controller GUI can be used to retrieve it.
+- Command written in Java or Python files, information from SDN controller to get or configure the network can use the API.
 
 ## SDN Architecture
 
@@ -117,12 +140,14 @@ In SDN via API, the functions in remote devices like switches are invoked using 
 
 ### SDN via Hypervisor-based Overlay Network
 
+<p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/SDN_supervisor.png"></p>
+
 In SDN via the hypervisor, the configuration of physical devices is unchanged. Instead, Hypervisor based overlay networks are created over the physical network. Only the devices at the edge of the physical network are connected to the virtualized networks, thereby concealing the information of other devices in the physical network.
 
 ### Hybrid SDN
 
 Hybrid Networking is a combination of Traditional Networking with software-defined networking in one network to support different types of functions on a network.
 
-## Mininet Topology Configuration
+## SDN OpenFlow REST API Exercise
 
 
