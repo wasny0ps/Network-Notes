@@ -80,16 +80,20 @@ First of all, we need RIP configuration on routers. If you don't know how to con
 
   
 ```
-R1(config)#int gi0/0/1
-R1(config-if)#ip nat outside
-R1(config-if)#exit
-R1(config)#int gi0/0/0
-R1(config-if)#ip nat inside
-R1(config-if)#exit
-R1(config)#ip nat pool pool1 20.1.1.5 20.1.1.20 netmask 255.255.255.0
-Router(config)#access-list 120 permit tcp 192.168.1.0 0.0.0.255 10.0.0.0 0.0.0.255 eq 80
-Router(config)#access-list 120 permit tcp 192.168.1.0 0.0.0.255 10.0.0.0 0.0.0.255 eq 21
-R1(config)#access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)#int gigabitEthernet 0/0/1
+Router(config-if)#ip access-group 120 out
+Router(config-if)#ex
+Router(config)#int gi0/0/1
+Router(config-if)#ip nat outside
+Router(config-if)#exit
+Router(config)#int gi0/0/0
+Router(config-if)#ip nat inside
+Router(config-if)#exit
+Router(config)#ip nat pool pool1 20.1.1.5 20.1.1.20 netmask 255.255.255.0
+Router(config)#access-list 120 permit ip 192.168.1.2 0.0.0.0 10.1.1.2 0.0.0.0
+Router(config)#access-list 120 permit ip 192.168.1.3 0.0.0.0 10.1.1.2 0.0.0.0
+Router(config)#access-list 120 permit ip 192.168.1.2 0.0.0.0 10.1.1.3 0.0.0.0
+Router(config)#access-list 120 permit ip 192.168.1.3 0.0.0.0 10.1.1.3 0.0.0.0
 Router(config)#int gigabitEthernet 0/0/1
 Router(config-if)#ip access-group 120 out
 Router(config-if)#ex
