@@ -1,6 +1,6 @@
 # Software Defined Networking (SDN)
 
-<p align="center"><img height="400" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/SDN.png"></p>
+<p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/SDN.png"></p>
 
 SDN stands for Software Defined Network which is a networking architecture approach. It **enables the control and management of the network using software applications**. **Through Software Defined Network (SDN) networking behavior of the entire network and its devices are programmed in a centrally controlled manner through software applications using open APIs**. 
 
@@ -63,19 +63,65 @@ The three main components that make the SDN are:
 
 ## SDN Controller
 
+All traditional networking devices like router and switches uses distributed control plane. But newer model of networking, Software Defined Networking (SDN) uses centralized control plane. Distributed control plane means that control plane of all networking devices lies within the device itself. 
+
+Each device have their own control plane to control data plane. In Centralized control plane system, there is a device which contains control plane of all devices. This device control the activities of data plane of all networking devices simultaneously. This device is called Controller or SDN controller. The following figure shows a model of controller based networking. 
+
+<p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/SDN_controller.png"></p>
+
+
+#### Southbound Interface
+
+In SDN, all networking devices must be connected to controller so that it can regulate data planes of all devices. When drawing architecture of network, usually the network architect places networking devices below controller. Now according to map conventions, interface between controller and networking devices lies to south of controller. Hence, these interfaces are called Southbound Interface. 
+
+Southbound interface is an interface between a program on controller and a program on networking device. Note that these interfaces we are discussing are software interface not physical one. 
+
+#### Nortbound Interface
+
+Controller need to know many information regarding network so that it can control data plane of networking devices All these information are provided by Network Programmer. Network Programmer provide essential information to controller through various software or script about what functions it has to do. Again these softwares/scripts are placed above controller in network architecture. This placement of software/script makes interfaces between controller and software in north direction, according to map conventions. Hence, Interfaces between controller and softwares are called Northbound Interface. These interfaces enable programmability of network. 
+All interfaces we discussed above are program based interfaces. These interfaces in a broader sense are called Application Program Interface (API). An API is an interface through which two program can exchange data between them.
 
 ## SDN Architecture
 
+<p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/SDN_architecture.png"></p>
+
+
+In a traditional network, each switch has its own data plane as well as the control plane. The control plane of various switches exchange topology information and hence construct a forwarding table that decides where an incoming data packet has to be forwarded via the data plane. Software-defined networking (SDN) is an approach via which we take the control plane away from the switch and assign it to a centralized unit called the SDN controller. Hence, a network administrator can shape traffic via a centralized console without having to touch the individual switches. The data plane still resides in the switch and when a packet enters a switch, its forwarding activity is decided based on the entries of flow tables, which are pre-assigned by the controller. A flow table consists of match fields (like input port number and packet header) and instructions. The packet is first matched against the match fields of the flow table entries. Then the instructions of the corresponding flow entry are executed. The instructions can be forwarding the packet via one or multiple ports, dropping the packet, or adding headers to the packet. If a packet doesn’t find a corresponding match in the flow table, the switch queries the controller which sends a new flow entry to the switch. The switch forwards or drops the packet based on this flow entry. 
+
+A typical SDN architecture consists of three layers.
+
+- **Application layer:** It contains the typical network applications like intrusion detection, firewall, and load balancing.
+- **Control layer:** It consists of the SDN controller which acts as the brain of the network. It also allows hardware abstraction to the applications written on top of it.
+- **Infrastructure layer:** This consists of physical switches which form the data plane and carries out the actual movement of data packets.
+
+The layers communicate via a set of interfaces called the north-bound APIs(between the application and control layer) and southbound APIs(between the control and infrastructure layer). 
 
 ## Different Models of SDN
 
+There are several models, which are used in SDN:
+
+- Open SDN
+- SDN via APIs
+- SDN via Hypervisor-based Overlay Network
+- Hybrid SDN
+
 ### Open SDN
+
+<p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/open_sdn.png"></p>
+
+Open SDN is implemented using the OpenFlow switch. It is a straightforward implementation of SDN. In Open SDN, the controller communicates with the switches using south-bound API with the help of OpenFlow protocol.
 
 ### SDN via APIs
 
+In SDN via API, the functions in remote devices like switches are invoked using conventional methods like SNMP or CLI or through newer methods like Rest API. Here, the devices are provided with control points enabling the controller to manipulate the remote devices using APIs. 
+
 ### SDN via Hypervisor-based Overlay Network
 
+In SDN via the hypervisor, the configuration of physical devices is unchanged. Instead, Hypervisor based overlay networks are created over the physical network. Only the devices at the edge of the physical network are connected to the virtualized networks, thereby concealing the information of other devices in the physical network.
+
 ### Hybrid SDN
+
+Hybrid Networking is a combination of Traditional Networking with software-defined networking in one network to support different types of functions on a network.
 
 ## Mininet Topology Configuration
 
