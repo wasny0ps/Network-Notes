@@ -78,26 +78,46 @@ Here is an example of dynamic NAT topology. Let's start.
 
 First of all, we need RIP configuration on routers. If you don't know how to configurate RIP, you should also [check this directory.](https://github.com/wasny0ps/Network-Notes/tree/main/0x8%20-%20Dynamic%20Routing)
 
-  
+Then, we should setting gi0/0/0 interface is 'inside' of the NAT and gi0/0/1 interface is 'outside' of the NAT:
+   
 ```
-Router(config)#int gigabitEthernet 0/0/1
-Router(config-if)#ip access-group 120 out
-Router(config-if)#ex
-Router(config)#int gi0/0/1
-Router(config-if)#ip nat outside
-Router(config-if)#exit
-Router(config)#int gi0/0/0
-Router(config-if)#ip nat inside
-Router(config-if)#exit
-Router(config)#ip nat pool pool1 20.1.1.5 20.1.1.20 netmask 255.255.255.0
-Router(config)#access-list 120 permit ip 192.168.1.2 0.0.0.0 10.1.1.2 0.0.0.0
-Router(config)#access-list 120 permit ip 192.168.1.3 0.0.0.0 10.1.1.2 0.0.0.0
-Router(config)#access-list 120 permit ip 192.168.1.2 0.0.0.0 10.1.1.3 0.0.0.0
-Router(config)#access-list 120 permit ip 192.168.1.3 0.0.0.0 10.1.1.3 0.0.0.0
-Router(config)#int gigabitEthernet 0/0/1
-Router(config-if)#ip access-group 120 out
-Router(config-if)#ex
-Router(config)#ip nat inside source list 120 pool pool1 
+R2(config)#int gi0/0/0
+R2(config-if)#ip nat inside
+R2(config-if)#exit
+R2(config)#int gi0/0/1
+R2(config-if)#ip nat outside
+```
+
+After that, we must create an access list that will be used to filter which network family dynamically get IP from this IP pool in the router R2:
+
+```
+R2(config)#access-list 1 permit 192.168.1.0 0.0.0.255
+R2(config)#ip nat pool POOL 30.1.1.10 30.1.1.20 netmask 255.255.255.0
+R2(config)#ip nat inside source list 1 pool POOL
+```
+
+When we want identify our topology, we will clearly see that any pc doesn't pinging to servers. However, they can using server's permitted services.
+
+  <p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/web_test.png"></p>
+
+  <p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/ftp_test.png"></p>
+
+  
+Lastly, you can also check our configuration on the router. And you can get this topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/Dynamic_NAT.pkt)
+
+```
+R2#show ip nat statistics 
+Total translations: 0 (0 static, 0 dynamic, 0 extended)
+Outside Interfaces: GigabitEthernet0/0/1
+Inside Interfaces: GigabitEthernet0/0/0
+Hits: 0  Misses: 6
+Expired translations: 0
+Dynamic mappings:
+-- Inside Source
+access-list 1 pool POOL refCount 0
+ pool POOL: netmask 255.255.255.0
+       start 30.1.1.10 end 30.1.1.20
+       type generic, total addresses 11 , allocated 0 (0%), misses 0
 ```
 
 ## NAT Overlaod (PAT)
