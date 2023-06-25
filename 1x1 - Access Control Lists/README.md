@@ -99,10 +99,58 @@ Router(config)#access list NUMBER permit|deny IP_PROTOCOL SOURCE_ADDRESS WILDCAR
 To better understand the concept of extended access lists, consider the following example:
 
 
-<p align="center"><img height="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/_ACL_topology.png"></p>
+<p align="center"><img height="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_acl_topology.png"></p>
 
-In this example, we want to **Users access only the server's web service**. **The developer access only server's FTP service**. And **Hacker's pc shouldn't get access to any service of this server**. First, 
+In this example, we want to **Users access only the server's web service**. **The developer access only server's FTP service**. And **Hacker's pc shouldn't get access to any service of this server**. First, we need to allow traffic from users to the server port of 80. We can do that using the following command:
 
+```
+Router(config)#access-list 100 permit tcp 192.168.10.2 0.0.0.0 172.160.10.2 0.0.0.0 eq 80
+```
+
+By using the tcp keyword, we can filter packets by the source and destination ports. In the example above, we have permitted traffic from 192.168.10.2 (Users workstation) to 172.160.10.2 (Server) on port 80. The last part of the statement, eq 80, specifies the destination port of 80. Since at the end of each access list there is an implicit deny all statement, we don’t need to define any more statement. After applying an access list, every traffic not originating from 192.168.10.2 and going to 192.168.0.1, port 80 will be denied.
+
+After than, let's allow traffic from developer to the server port of 21. We can do that using the following command:
+
+```
+Router(config)#access-list 100 permit tcp 192.168.10.4 0.0.0.0 172.160.10.2 0.0.0.0 eq 21
+```
+Then, time to deny unauthorized IP addresses from unauthorized server's ports. We can do that using the following commands:
+
+```
+Router(config)#access-list 100 deny tcp 192.168.10.4 0.0.0.0 172.160.10.2 0.0.0.0 eq 80
+Router(config)#access-list 100 deny tcp 192.168.10.2 0.0.0.0 172.160.10.2 0.0.0.0 eq 21
+```
+
+As always, we have to blocked server connection which comes from the hacker. So we must deny all ports in this server from the 192.168.10.3 (Hacker's IP Address) for security policy of our network. We can do that using the following command:
+
+```
+Router(config)#access-list 100 deny ip 192.168.10.3 0.0.0.0 172.160.10.2 0.0.0.0
+```
+
+Lastly, we should setting access list's bound way. We can do that using the following commands:
+
+```
+Router(config)#int gigabitEthernet 0/0/0
+Router(config-if)#ip access-group 100 in
+```
+
+End of the configuration, there is checkimg time. Let's put to ping test.
+
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_ping_test.png"></p>
+
+As result shows that there is any device didn't ping to server because of almost all protocols are blocked by the our extended ACL. Let's look at other test result!
+
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_web_page_test.png"></p>
+
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_ftp_test.png"></p>
+
+In both photos show, our topology rules are work properly. Why don't we look at from the hacker's view?
+
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_web_page_test_hacker.png"></p>
+
+<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_ftp_test_hacker.png"></p>
+
+In last two photos says, there is nothing be on the rails. He don't get access to web and file service which is our configuration plan. And finally, you can get this topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/Extended_ACL.pkt)
 
 ## Named ACL
 
@@ -153,4 +201,4 @@ Extended IP access list allow_file_share
 
 Notice the sequence number at the beginning of each entry. If we need to stick a new entry between these two entries, we can do that by specifying a sequence number in the range between 20 and 50. If we don’t specify the sequence number, the entry will be added to the bottom of the list. Let's pinging to server from the different network's computers for check the configuration. Here is an image with proof that our named ACL configuration is working correctly. Finally, you can get this topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/Named_ACL.pkt)
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/valideting.png"></p>
+<p align="center"><img height="60"  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/valideting.png"></p>
