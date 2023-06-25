@@ -92,3 +92,26 @@ IPSec uses algorithms called Diffie-Helman to exchange public keys between devic
 
 
 ## IPSec Protocols
+
+As shown in the figure before, IPSec protocols are ranked 1st in the IPSec building block. There are 2 types, AH and ESP.
+
+### AH (Authentication Header)
+
+The AH protocol is generally used when privacy is not required or allowed. In order to prevent changes that may occur during transmission and to protect the integrity of the sent packet, the IP packet is given a sequence number. If the packages reach the recipient side in a way that does not match the sequence number, the packages are not accepted. However, since AH does not provide privacy, it can create a security vulnerability if used alone.
+
+### ESP (Encapsulating Security Payload)
+
+The ESP protocol can provide both privacy and authentication. This protocol primarily encrypts IP packets with sequence numbers given by AH using specified algorithms and decrypts them using the same algorithms when they reach the destination. Thus, the vulnerability that may occur by AH is prevented.
+
+AH and ESP protocols can be applied to IP packets in two different ways.
+
+#### Transport Mode
+
+In this mode, security is a feature provided only at the Transport layer and above from the OSI layers. Transport mode provides protection of IP packet with AH or ESP. While protection takes place over the payload portion of the packet, the actual IP address does not change. It can be used by devices within the same local network.
+
+#### Tunnel Mode
+
+In this mode, security is performed over the entire IP packet. The real IP packet is encrypted and encapsulated with the help of another IP packet. Generally, tunnel mode is used when data is going to traverse a different network. In tunnel mode, encryption is done on the gateway while data leaves the network. There is no need to use IPSec in internal networks.
+
+
+**_by wasny0ps_**
