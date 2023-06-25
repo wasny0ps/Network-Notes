@@ -98,9 +98,9 @@ R2(config)#ip nat inside source list 1 pool POOL
 
 When we want identify our topology, we will clearly see that any pc doesn't pinging to servers. However, they can using server's permitted services.
 
-  <p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/web_test.png"></p>
+  <p align="center"><img height="225" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/web_test.png"></p>
 
-  <p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/ftp_test.png"></p>
+  <p align="center"><img height="225" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/ftp_test.png"></p>
 
   
 Lastly, you can also check our configuration on the router. And you can get this topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x2%20-%20NAT/src/Dynamic_NAT.pkt)
