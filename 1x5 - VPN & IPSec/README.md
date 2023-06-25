@@ -1,6 +1,6 @@
 # VPN
 
-<p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x5%20-%20VPN%20%26%20IPsec/src/VPN.png"></p>
+<p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x5%20-%20VPN%20%26%20IPSec/src/VPN.png"></p>
 
 A virtual private network (VPN) is an overlay network. It is a logical network established on top of a physical, usually public, network and may span several geographical regions. That’s why it is called virtual. If a device is connected to a VPN, it gives the users an illusion of being directly connected to their organization’s private network. Of course, a VPN’s traffic traveling across public networks is encrypted giving the users security and privacy when working remotely. Remote access, security, and privacy are the main reasons for using VPNs.
 
@@ -16,7 +16,7 @@ A virtual private network (VPN) is an overlay network. It is a logical network e
 
 VPNs differ in their architecture and transport protocols used to establish the overlay network. The VPN architecture may be either point-to-point or site-to-site. A point-to-point VPN is used to provide a device with remote access to a private network. In contrast, a site-to-site VPN is used to establish an imaginary bridge between two private networks as if they were connected directly:
 
-<p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x5%20-%20VPN%20%26%20IPsec/src/VPN_architecture.png"></p>
+<p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x5%20-%20VPN%20%26%20IPSec/src/VPN_architecture.png"></p>
 
 The transport connection established between two VPN entities is usually called a tunnel and the process of routing traffic through that tunnel is called tunneling. This happens only by using software without requiring any additional hardware. Of course, there exist also hardware VPN boxes, but they are usually used for purposes requiring very strong security measures.
 
@@ -40,7 +40,7 @@ VPN protocols are usually designed for a particular combination of the overlay n
 
 Although a VPN provides security by encrypting the transmitted data, it doesn’t ensure privacy. The remote VPN server may be logging usernames, IP addresses, and user activities. Moreover, some services may use IP address-based geolocation or a Wi-Fi positioning system to reveal the user’s location, sometimes with surprising precision. When using a VPN server, the location service reveals only the location of the VPN server, but not the location of the client. So what can we do if we don’t want to reveal our identity or location to a VPN server or a remote service? We can establish a VPN tunnel to another VPN server (hop) inside a VPN tunnel. We can even repeat it several times by nesting VPN tunnels. This nesting method is called multi-hop VPN or onion routing. At each subsequent hop, a nested VPN layer is dropped, much like peeling away layers of an onion:
 
-<p align="center"><img width="700" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x5%20-%20VPN%20%26%20IPsec/src/onion_routing.png"></p>
+<p align="center"><img width="700" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x5%20-%20VPN%20%26%20IPSec/src/onion_routing.png"></p>
 
 This approach is used by the well-known Tor relay network. Because the VPN client reaches the target (the innermost tunnel endpoint) indirectly over multiple hops, it is very hard to reveal the client’s real IP address and identity. Of course, this is all achieved at the burden of higher overhead and slower virtual connection speed.
 
@@ -48,7 +48,7 @@ This approach is used by the well-known Tor relay network. Because the VPN clien
 
 ## IPsec
 
-<p align="center"><img width="600" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x5%20-%20VPN%20%26%20IPsec/src/ipsec.png"></p>
+<p align="center"><img width="600" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x5%20-%20VPN%20%26%20IPSec/src/ipsec.png"></p>
 
 IPSec is a security protocol developed by the IETF (Internet Engineering Task Force) to meet the security needs of IP protocols using encryption and security services. Thanks to this protocol, the data reaches the destinations that need to go safely on the network. It works at the IPSec network layer, providing protection and authentication of IP packets between IPSec devices. Since IPSec works at the network layer, it encrypts every data independently of the application and enables the data to travel easily on the Internet with the header it creates after the password. Therefore, it forms the infrastructure of VPN (Virtual Private Network) technology today. The terms IPsec and VPN are often confused with each other. VPN is used to establish a virtual network between two endpoints. IPSec provides security-enhancing functions to the VPN connections created. There are different ways to create a VPN at layer 2 and layer 3. IPSec is just one of these ways. Today, with the development of the Internet, these two concepts are intertwined as IPSec VPN connections can be made easily.
 
@@ -56,7 +56,7 @@ Since IPSec protocols work at the network layer, they are more flexible than oth
 
 The IPSec framework includes 5 basic building blocks:
 
-<p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x5%20-%20VPN%20%26%20IPsec/src/IPsec_framework.png"></p>
+<p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x5%20-%20VPN%20%26%20IPSec/src/IPsec_framework.png"></p>
 
 IPSec can provide secure data transfer between gateways, between clients, and between gateways and clients. Using the IPSec framework, 4 basic security requirements can be realized.
 
