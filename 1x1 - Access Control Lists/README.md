@@ -202,3 +202,5 @@ Extended IP access list allow_file_share
 Notice the sequence number at the beginning of each entry. If we need to stick a new entry between these two entries, we can do that by specifying a sequence number in the range between 20 and 50. If we don’t specify the sequence number, the entry will be added to the bottom of the list. Let's pinging to server from the different network's computers for check the configuration. Here is an image with proof that our named ACL configuration is working correctly. Finally, you can get this topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/Named_ACL.pkt)
 
 <p align="center"><img height="60"  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/valideting.png"></p>
+
+**by wasny0ps_**
