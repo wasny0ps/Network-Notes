@@ -140,17 +140,17 @@ End of the configuration, there is checkimg time. Let's put to ping test.
 
 As result shows that there is any device didn't ping to server because of almost all protocols are blocked by the our extended ACL. Let's look at other test result!
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_web_page_test.png"></p>
+<p align="center"><img height="275" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_web_page_test.png"></p>
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_ftp_test.png"></p>
+<p align="center"><img height="250" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_ftp_test.png"></p>
 
 In both photos show, our topology rules are work properly. Why don't we look at from the hacker's view?
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_web_page_test_hacker.png"></p>
+<p align="center"><img height="125" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_web_page_test_hacker.png"></p>
 
-<p align="center"><img  src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_ftp_test_hacker.png"></p>
+<p align="center"><img height="300" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/extended_ftp_test_hacker.png"></p>
 
-In last two photos says, there is nothing be on the rails. He don't get access to web and file service which is our configuration plan. And finally, you can get this topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/Extended_ACL.pkt)
+In last two photos says, there was nothing be on the rails for him. He don't get access to web and file service which is our configuration plan. And finally, you can get this topology from [here.](https://github.com/wasny0ps/Network-Notes/blob/main/1x1%20-%20Access%20Control%20Lists/src/Extended_ACL.pkt)
 
 ## Named ACL
 
