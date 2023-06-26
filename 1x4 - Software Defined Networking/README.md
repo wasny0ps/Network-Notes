@@ -10,7 +10,7 @@ Generally, **enterprises use SDN**, the most widely used method for application 
   
    - **Forwarding of packets**.
    - **Segmentation and reassembly of data**.
-   - **Replication of packets for multicasting**.
+   - **Replication of packets for multicasting**. 
 
 - **Control plane:** All activities necessary to perform data plane activities but do not involve end-user data packets belong to this plane. In other words, this is the **brain of the network**. The activities of the control plane include:
   
