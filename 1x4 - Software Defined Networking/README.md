@@ -148,6 +148,5 @@ In SDN via the hypervisor, the configuration of physical devices is unchanged. I
 
 Hybrid Networking is a combination of Traditional Networking with software-defined networking in one network to support different types of functions on a network.
 
-## SDN OpenFlow REST API Exercise
-
+**_by wasny0ps_**
 
