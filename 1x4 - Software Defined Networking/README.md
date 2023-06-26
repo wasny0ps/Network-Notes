@@ -136,6 +136,9 @@ Open SDN is implemented using the OpenFlow switch. It is a straightforward imple
 
 ### SDN via APIs
 
+<p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/SDN_APIs.png"></p>
+
+
 In SDN via API, the functions in remote devices like switches are invoked using conventional methods like SNMP or CLI or through newer methods like Rest API. Here, the devices are provided with control points enabling the controller to manipulate the remote devices using APIs. 
 
 ### SDN via Hypervisor-based Overlay Network
@@ -145,6 +148,8 @@ In SDN via API, the functions in remote devices like switches are invoked using 
 In SDN via the hypervisor, the configuration of physical devices is unchanged. Instead, Hypervisor based overlay networks are created over the physical network. Only the devices at the edge of the physical network are connected to the virtualized networks, thereby concealing the information of other devices in the physical network.
 
 ### Hybrid SDN
+
+<p align="center"><img height="350" src="https://github.com/wasny0ps/Network-Notes/blob/main/1x4%20-%20Software%20Defined%20Networking/src/hybrid_SDN.png"></p>
 
 Hybrid Networking is a combination of Traditional Networking with software-defined networking in one network to support different types of functions on a network.
 
