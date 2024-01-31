@@ -1,3 +1,4 @@
 # Network-Notes
-## Content Table
-- [**0x0 Basics Of Computer Networking**](https://github.com/wasny0ps/Network-Notes/tree/main/0x0%20-%20Basics%20Of%20Computer%20Networking)
+In this repository, you can find my high school notes on computer networking. These notes will help you learn about networks and improve your network management skills.
+
+If you are interest in network security, you can see my [article](https://github.com/wasny0ps/CyberSecurity-Notes/tree/main/Network%20Security/Layer%202%20Security).
